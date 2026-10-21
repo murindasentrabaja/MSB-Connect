@@ -78,6 +78,8 @@ nav a{flex:1;flex-direction:column;justify-content:center;gap:2px;font-size:12px
 .mm .mh{display:flex;gap:10px;align-items:baseline}.pc{font:700 24px 'Barlow Condensed',sans-serif;color:var(--ok)}
 .rc{display:flex;justify-content:space-between;align-items:center;gap:12px;width:100%;margin-top:8px;padding:10px 14px;background:#fff;color:var(--ink);border:1px solid var(--line);text-align:left}
 .rc small{display:block;color:var(--mut);font-weight:400}.rc b{font:700 24px 'Barlow Condensed',sans-serif;color:var(--ok)}.as span{display:block}.fc a{color:var(--red);font-weight:600}
+.pre{white-space:pre-wrap;word-break:break-word;max-height:360px;overflow:auto;margin:10px 0 0;padding:12px;background:#F7F8F9;border:1px solid var(--line);border-radius:10px;font:13px/1.5 Arial,sans-serif}
+#hl{display:grid;gap:12px}.hf{margin-bottom:12px}.hf .ck2{margin:0;align-items:center}.ck2 a,.hint a{color:var(--red);font-weight:600}
 </style></head><body>
 <svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
 <symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></symbol>
@@ -98,219 +100,167 @@ nav a{flex:1;flex-direction:column;justify-content:center;gap:2px;font-size:12px
 
 <div id="vConnect">
 <section class="hero">
- <div><h1>Bangun karir di pabrik baja alat berat.</h1><p class="lead">Hubungkan email Anda, pilih bidang yang diminati, dan kami kabari saat ada lowongan yang cocok. Susun CV yang lolos penyaringan ATS langsung di sini.</p>
+ <div><h1>Bangun karir di pabrik baja alat berat.</h1><p class="lead">Hubungkan email Anda, pilih bidang yang diminati, lalu lamar cukup dengan mengunggah CV. Kami kabari perkembangan lamaran lewat email.</p>
   <div class="facts"><div><b id="h1">0</b><span>lowongan terbuka</span></div><div><b id="h2">0</b><span>departemen</span></div><div><b id="h3">0</b><span>lokasi kerja</span></div></div></div>
  <div class="fc">
  <div id="pIn"><h2>Masuk</h2><p class="hint" style="margin:6px 0 0">Masukkan email Anda. Kami kirim tautan login ke email itu, tanpa kata sandi.</p>
   <label for="lE">Email</label><input id="lE" type="email" autocomplete="email" placeholder="nama@email.com">
   <button id="lGo" style="width:100%;margin-top:16px">Kirim tautan masuk</button>
-  <p class="hint" style="text-align:center;margin:16px 0 0">Tidak ada akun? <a href="#" data-sw="reg">Terhubung dengan kami</a></p></div>
+  <p class="hint" style="text-align:center;margin:16px 0 0">Tidak ada akun? <a href="#" data-sw="reg">Terhubung dengan kami</a></p>
+  <p class="hint" style="text-align:center;margin:6px 0 0">Staf HRD? <a href="#" data-sw="hrd">Login HRD</a></p></div>
  <div id="pReg" class="hide"><h2>Terhubung dengan kami</h2><p class="hint" style="margin:6px 0 0">Buat akun dengan nama dan email. Email sambutan dan tautan login kami kirim otomatis.</p>
   <label for="cN">Nama lengkap</label><input id="cN" autocomplete="name">
   <label for="cE">Email</label><input id="cE" type="email" autocomplete="email">
   <label>Bidang yang diminati</label><div class="chips" id="cD"></div>
   <label class="ck2"><input type="checkbox" id="cA" checked> Kirim info lowongan baru ke email saya</label>
-  <label class="ck2"><input type="checkbox" id="cK"> Saya setuju data saya, termasuk CV, diproses untuk keperluan rekrutmen PT Murinda Sentra Baja.</label>
+  <label class="ck2"><input type="checkbox" id="cK"> Saya setuju data saya, termasuk CV, diproses (termasuk dengan bantuan penyaringan otomatis) untuk keperluan rekrutmen PT Murinda Sentra Baja.</label>
   <button id="cGo" style="width:100%;margin-top:8px">Hubungkan</button>
   <p class="hint" style="text-align:center;margin:16px 0 0">Sudah punya akun? <a href="#" data-sw="in">Masuk</a></p></div>
+ <div id="pHrd" class="hide"><h2>Login HRD</h2><p class="hint" style="margin:6px 0 0">Khusus staf HRD. Masukkan email HRD yang terdaftar, tautan login akan dikirim ke email itu.</p>
+  <label for="hE">Email HRD</label><input id="hE" type="email" autocomplete="email" placeholder="hrd@perusahaan.com">
+  <button id="hGo" style="width:100%;margin-top:16px">Kirim tautan masuk HRD</button>
+  <p class="hint" style="text-align:center;margin:16px 0 0"><a href="#" data-sw="in">Kembali ke login pelamar</a></p></div>
  <div id="pSent" class="hide"><h2>Cek email Anda</h2><p id="sMsg" style="margin:10px 0 18px"></p>
   <div class="row"><button class="g" id="rs" type="button">Kirim ulang tautan</button><button class="g" data-sw="in" type="button">Gunakan email lain</button></div></div>
  <div id="pVer" class="hide"><h2>Memverifikasi tautan…</h2><p class="hint">Mohon tunggu sebentar.</p></div></div>
 </section>
 <section class="how"><h2>Cara melamar di sini</h2><ol>
  <li><b>Hubungkan email</b><span>Pilih bidang yang Anda minati agar lowongan relevan tampil lebih dulu.</span></li>
- <li><b>Susun CV dan cek skor ATS</b><span>Skor naik saat CV memuat kata kunci posisi yang dituju.</span></li>
+ <li><b>Unggah CV</b><span>Cukup satu file PDF, DOCX, atau TXT. Tidak perlu mengisi data CV lagi.</span></li>
  <li><b>Lamar dan pantau status</b><span>Semua lamaran dan tahapnya tercatat di tab Lamaran saya.</span></li></ol></section>
 </div>
 
 <div id="vApp" class="hide">
- <div class="dh"><h1 id="hi">Halo</h1><p>Temukan posisi yang cocok, perkuat CV Anda, lalu lamar.</p>
-  <div class="sg"><div><b id="s1">0</b><span>Lowongan terbuka</span></div><div><b id="s2">0</b><span>Lamaran saya</span></div><div><b id="s3">–</b><span>Skor ATS CV</span></div></div></div>
- <nav role="tablist"><a data-t="jobs" class="on" tabindex="0" role="tab"><svg class="i"><use href="#i-brief"/></svg>Lowongan</a><a data-t="cv" tabindex="0" role="tab"><svg class="i"><use href="#i-doc"/></svg>CV &amp; skor ATS</a><a data-t="apps" tabindex="0" role="tab"><svg class="i"><use href="#i-send"/></svg>Lamaran saya</a></nav>
+ <div class="dh"><h1 id="hi">Halo</h1><p>Temukan posisi yang cocok, unggah CV Anda, lalu lamar.</p>
+  <div class="sg"><div><b id="s1">0</b><span>Lowongan terbuka</span></div><div><b id="s2">0</b><span>Lamaran saya</span></div><div><b id="s3">–</b><span>CV tersimpan</span></div></div></div>
+ <nav role="tablist"><a data-t="jobs" class="on" tabindex="0" role="tab"><svg class="i"><use href="#i-brief"/></svg>Lowongan</a><a data-t="cv" tabindex="0" role="tab"><svg class="i"><use href="#i-doc"/></svg>CV saya</a><a data-t="apps" tabindex="0" role="tab"><svg class="i"><use href="#i-send"/></svg>Lamaran saya</a></nav>
  <main>
   <section id="tjobs"><div class="tb"><div class="sb"><svg class="i"><use href="#i-search"/></svg><input id="q" placeholder="Cari posisi atau kata kunci" aria-label="Cari"></div><span class="hint" id="jc"></span></div>
    <input type="hidden" id="fd" value=""><div class="chips" id="fc"></div><div class="jg" id="jl"></div></section>
-  <section id="tcv" class="hide"><div class="two">
-   <div class="card"><h3>Data CV</h3><p class="hint">Format satu kolom tanpa tabel dan gambar, supaya terbaca sistem ATS. Awali butir dengan tanda “-”.</p><label class="drop" id="dz" tabindex="0"><input type="file" id="cf" accept=".pdf,.docx,.txt" hidden><svg class="i"><use href="#i-up"/></svg><b>Unggah CV Anda</b><span>PDF, DOCX, atau TXT, maksimal 5 MB. Data terisi otomatis dan bisa Anda ubah.</span></label><p class="hint" id="cs" role="status"></p>
-    <label>Posisi yang dituju</label><select id="tg"></select>
-    <div class="row"><div><label>Nama</label><input data-k="nama"></div><div><label>Email</label><input data-k="email"></div></div>
-    <div class="row"><div><label>No. telepon</label><input data-k="telp"></div><div><label>Kota</label><input data-k="kota"></div></div>
-    <label>Ringkasan profil</label><textarea data-k="ring"></textarea>
-    <label>Pengalaman kerja</label><textarea data-k="peng" placeholder="Welder – PT Contoh (2021–2024)&#10;- Mengelas rangka bucket 30 ton dengan GMAW, reject turun 15%"></textarea>
-    <label>Pendidikan</label><textarea data-k="pend"></textarea>
-    <label>Keterampilan (pisahkan dengan koma)</label><textarea data-k="skill"></textarea>
-    <label>Sertifikasi</label><textarea data-k="sert"></textarea>
-    <label>Atau tempel teks CV yang sudah ada (menggantikan data di atas untuk skor)</label><textarea data-k="paste"></textarea></div>
-   <div class="side">
-    <div class="card"><div class="gz" id="gz"><div class="gr"><svg viewBox="0 0 120 120" aria-hidden="true"><circle class="rb" cx="60" cy="60" r="52"/><circle class="rf" id="rf" cx="60" cy="60" r="52"/></svg><div class="score" id="sc">0</div></div>
-     <div><h3 id="sv"></h3><p class="hint" id="sj" style="margin:4px 0 0"></p></div></div>
-     <ul class="chk" id="ck"></ul><p class="kh">Kata kunci posisi</p><div class="chips" id="kw" style="margin:0"></div><details class="why"><summary>Bagaimana penilaian ini dibuat?</summary><p class="hint">Penilaian hanya memakai keahlian, pengalaman, pendidikan, dan sertifikasi yang sesuai posisi. Nama, usia, jenis kelamin, foto, dan alamat tidak dipakai. Skor membantu mengurutkan dan tidak menolak lamaran. Semua lamaran dibaca tim rekrutmen, dan Anda bisa memperbaiki hasil bacaan CV kapan saja.</p></details></div>
-    <div class="card"><h3>Lowongan yang cocok</h3><div id="rec"><p class="hint">Isi atau unggah CV untuk melihat lowongan yang paling cocok.</p></div></div>
-    <div class="row"><button id="pr" type="button"><svg class="i"><use href="#i-dl"/></svg>Unduh PDF</button><button class="g" id="cp" type="button"><svg class="i"><use href="#i-cp"/></svg>Salin teks CV</button></div>
-    <div class="cvp" id="cvprev"></div></div>
-  </div></section>
+  <section id="tcv" class="hide"><div class="card" style="max-width:640px"><h3>CV saya</h3><p class="hint">Unggah satu file CV. Gunakan PDF atau DOCX berbasis teks (bukan hasil scan atau foto) agar mudah dibaca.</p>
+   <label class="drop" id="dz" tabindex="0"><input type="file" id="cf" accept=".pdf,.docx,.txt" hidden><svg class="i"><use href="#i-up"/></svg><b>Unggah CV Anda</b><span>PDF, DOCX, atau TXT, maksimal 5 MB. Seret file ke sini atau ketuk untuk memilih.</span></label><p class="hint" id="cs" role="status"></p></div></section>
   <section id="tapps" class="hide"><div id="al"></div></section>
  </main></div>
+
+<div id="vHrd" class="hide">
+ <div class="dh"><h1>Panel HRD</h1><p>Skor kecocokan hanya terlihat di halaman ini dan hanya membantu mengurutkan. Semua lamaran tetap dibaca tim HRD.</p>
+  <div class="sg"><div><b id="x1">0</b><span>Total lamaran</span></div><div><b id="x2">0</b><span>Belum diproses</span></div><div><b id="x3">0</b><span>Tahap wawancara</span></div></div></div>
+ <main><div class="tb"><div class="sb"><svg class="i"><use href="#i-search"/></svg><input id="hq" placeholder="Cari nama, email, ID, atau posisi" aria-label="Cari lamaran"></div></div>
+  <div class="row hf"><select id="hj" aria-label="Posisi"></select><select id="hs" aria-label="Status"></select><select id="ho" aria-label="Urutan"><option value="">Urut: kecocokan tertinggi</option><option value="t">Urut: terbaru</option></select><label class="ck2"><input type="checkbox" id="hbl"> Sembunyikan identitas</label></div>
+  <div id="hl"></div></main></div>
+
 <footer>Data Anda hanya dipakai untuk keperluan rekrutmen PT Murinda Sentra Baja.</footer>
 <div id="toast" role="status"></div>
-
 <script>
 const API_URL='https://script.google.com/macros/s/AKfycbzu5hszKKV59stH8D7qEmfXL4f43y70KWFYNnF7y7Z_w4o3XUjvPp5u7GMrXNU0CvEn5g/exec';
-const DEMO=[
-{id:'J01',judul:'Welder Fabrikasi',dept:'Produksi',lokasi:'Bekasi',tipe:'Penuh waktu',desk:'Mengelas rangka counterweight dan bucket excavator sesuai WPS dan gambar kerja.',kual:'Pengalaman mengelas min. 2 tahun;Paham gambar teknik;Sertifikat welder diutamakan',kata:'SMAW,GMAW,FCAW,welding,WPS,gambar teknik,K3'},
-{id:'J02',judul:'QC Inspector',dept:'Quality Control',lokasi:'Bekasi',tipe:'Penuh waktu',desk:'Inspeksi dimensi, visual las dan coating produk fabrikasi, serta membuat laporan NCR.',kual:'D3/S1 Teknik;Mampu memakai alat ukur;Paham ISO 9001',kata:'inspeksi,NDT,dimensi,coating,NCR,ISO 9001,caliper'},
-{id:'J03',judul:'Design Engineer',dept:'Engineering',lokasi:'Bekasi',tipe:'Penuh waktu',desk:'Membuat gambar kerja dan BOM untuk produk counterweight dan bucket.',kual:'S1 Teknik Mesin;Menguasai CAD;Teliti dan komunikatif',kata:'AutoCAD,SolidWorks,gambar kerja,BOM,counterweight,bucket,toleransi'},
-{id:'J04',judul:'Staf Purchasing',dept:'Purchasing',lokasi:'Bekasi',tipe:'Penuh waktu',desk:'Mengelola permintaan pembelian, negosiasi supplier dan pemantauan kedatangan material.',kual:'Min. D3 semua jurusan;Mahir Excel;Pengalaman pengadaan diutamakan',kata:'PO,supplier,negosiasi,Excel,SPP,pengadaan,material'},
-{id:'J05',judul:'Safety Officer',dept:'HSE',lokasi:'Bekasi',tipe:'Penuh waktu',desk:'Menjalankan program K3, inspeksi area kerja dan investigasi insiden.',kual:'Sertifikat Ahli K3 Umum;Pengalaman manufaktur;Tegas dan komunikatif',kata:'K3,HIRA,risk assessment,APD,investigasi insiden,inspeksi,SMK3'}];
+const PDFJS='https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf',MAM='https://cdnjs.cloudflare.com/ajax/libs/mammoth/1.6.0/mammoth.browser.min.js';
 const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)];
 const L=(k,d)=>{try{return JSON.parse(localStorage.getItem(k))??d}catch(e){return d}},S=(k,v)=>{try{localStorage.setItem(k,JSON.stringify(v))}catch(e){}};
 const esc=s=>String(s??'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
-let me=L('me',null),cv=L('cv',{}),apps=L('apps',[]),jobs=DEMO,minat=[];
-const toast=m=>{const t=$('#toast');t.textContent=m;t.style.display='block';clearTimeout(t._);t._=setTimeout(()=>t.style.display='none',3200)};
-async function api(a,d){if(!API_URL.startsWith('http'))return{ok:false,offline:true};
- try{const r=await(await fetch(API_URL,{method:'POST',body:JSON.stringify({action:a,session:ses,...d})})).json();if(r.auth===false&&ses){logout();toast('Sesi berakhir. Silakan masuk lagi.')}return r}catch(e){return{ok:false,offline:true}}}
-const depts=()=>[...new Set(jobs.map(j=>j.dept))];
-const kws=j=>(j?.kata||'').split(',').map(x=>x.trim()).filter(Boolean);
-function chips(){stats();$('#cD').innerHTML=depts().map(d=>`<span class="chip${minat.includes(d)?' on':''}" tabindex="0" role="button" aria-pressed="${minat.includes(d)}" data-d="${esc(d)}">${esc(d)}</span>`).join('')}
+const OK=e=>/^\S+@\S+\.\S+$/.test(e),live=API_URL.startsWith('http');
+const ST=['Diterima','Diseleksi','Wawancara','Penawaran','Tidak lanjut'],LB={Diterima:'Lamaran diterima',Diseleksi:'Diseleksi',Wawancara:'Wawancara',Penawaran:'Penawaran kerja','Tidak lanjut':'Tidak dilanjutkan'};
+let ses=L('ses',null),me=L('me',null),cv={},apps=[],jobs=[],jobsErr=false,jobsDone=false,minat=[],lastMail='',lastHrd=false,H=[],HJ=[];
+const toast=m=>{const t=$('#toast');t.textContent=m;t.style.display='block';clearTimeout(t._);t._=setTimeout(()=>t.style.display='none',4500)};
+async function api(a,d){if(!live)return{ok:false,msg:'Alamat server (API_URL) belum diisi.'};
+ try{const r=await(await fetch(API_URL,{method:'POST',body:JSON.stringify({action:a,session:ses,...d})})).json();if(r.auth===false&&ses){logout();toast('Sesi berakhir. Silakan masuk lagi.')}return r}
+ catch(e){return{ok:false,msg:'Server tidak dapat dihubungi. Periksa koneksi lalu coba lagi.'}}}
+const depts=()=>[...new Set(jobs.map(j=>j.dept).filter(Boolean))];
+function stats(){$('#h1').textContent=jobs.length;$('#h2').textContent=depts().length;$('#h3').textContent=new Set(jobs.map(j=>j.lokasi).filter(Boolean)).size}
+function chips(){stats();$('#cD').innerHTML=depts().map(d=>`<span class="chip${minat.includes(d)?' on':''}" tabindex="0" role="button" aria-pressed="${minat.includes(d)}" data-d="${esc(d)}">${esc(d)}</span>`).join('')||`<span class="hint">${jobsErr?'Daftar bidang belum bisa dimuat. Muat ulang halaman.':jobsDone?'Belum ada bidang tersedia.':'Memuat bidang…'}</span>`}
 $('#cD').onclick=e=>{const d=e.target.dataset.d;if(!d)return;minat=minat.includes(d)?minat.filter(x=>x!=d):[...minat,d];chips()};
 $('#cD').onkeydown=e=>{if(e.key=='Enter'||e.key==' '){e.preventDefault();e.target.click()}};
+const PN={reg:'pReg',in:'pIn',hrd:'pHrd'},pane=id=>['pIn','pReg','pHrd','pSent','pVer'].forEach(p=>$('#'+p).classList.toggle('hide',p!=id));
+document.addEventListener('click',e=>{const a=e.target.closest('[data-sw]');if(a){e.preventDefault();pane(PN[a.dataset.sw]||'pIn')}});
+function sent(email,pre,hrd){lastMail=email;lastHrd=!!hrd;$('#sMsg').textContent=hrd?'Jika '+email+' terdaftar sebagai HRD, tautan masuk sudah dikirim ke email itu. Tautan berlaku 15 menit dan hanya bisa dipakai sekali.':(pre?pre+' ':'')+'Tautan masuk dikirim ke '+email+'. Buka email Anda lalu ketuk Login. Tautan berlaku 15 menit dan hanya bisa dipakai sekali.';pane('pSent');cool()}
+function cool(){const b=$('#rs');let n=60;b.disabled=true;const t=setInterval(()=>{n--;b.textContent=n>0?'Kirim ulang ('+n+' dtk)':'Kirim ulang tautan';if(n<=0){clearInterval(t);b.disabled=false}},1000)}
+async function login(email,hrd){const r=await api(hrd?'loginHrd':'login',{email});
+ if(!r.ok)return toast(r.msg||'Gagal mengirim tautan.');
+ if(!hrd&&!r.exists){$('#cE').value=email;pane('pReg');return toast('Email belum terdaftar. Lengkapi data untuk membuat akun.')}sent(email,'',hrd)}
+$('#lGo').onclick=async()=>{const e=$('#lE').value.trim().toLowerCase();if(!OK(e))return toast('Isi email yang valid.');$('#lGo').disabled=true;await login(e,false);$('#lGo').disabled=false};
+$('#hGo').onclick=async()=>{const e=$('#hE').value.trim().toLowerCase();if(!OK(e))return toast('Isi email HRD yang valid.');$('#hGo').disabled=true;await login(e,true);$('#hGo').disabled=false};
+$('#lE').onkeydown=e=>{if(e.key=='Enter')$('#lGo').click()};$('#hE').onkeydown=e=>{if(e.key=='Enter')$('#hGo').click()};$('#rs').onclick=()=>login(lastMail,lastHrd);
 $('#cGo').onclick=async()=>{const nama=$('#cN').value.trim(),email=$('#cE').value.trim().toLowerCase();
- if(!nama||!/^\S+@\S+\.\S+$/.test(email))return toast('Isi nama dan email yang valid.');
+ if(!nama||!OK(email))return toast('Isi nama dan email yang valid.');
  const p={nama,email,minat,alert:$('#cA').checked};
- if(ses){const r=await api('profile',p);if(r.ok===false&&!r.offline)return toast(r.msg||'Gagal menyimpan profil.');me={...me,...p};S('me',me);toast('Profil diperbarui.');return enter()}
+ if(ses){const r=await api('profile',p);if(!r.ok)return toast(r.msg||'Gagal menyimpan profil.');me={...me,...p};S('me',me);toast('Profil diperbarui.');return enter()}
  if(!$('#cK').checked)return toast('Centang persetujuan penggunaan data.');
  $('#cGo').disabled=true;const r=await api('register',{...p,consent:true});$('#cGo').disabled=false;
- if(r.offline){me=p;S('me',me);cv.nama=cv.nama||nama;cv.email=cv.email||email;S('cv',cv);toast('Mode lokal: email tidak dikirim.');return enter()}
  if(!r.ok)return toast(r.msg||'Gagal terhubung.');sent(email,r.exists?'Email ini sudah terdaftar.':'Akun dibuat.')};
 $('#edit').onclick=()=>{$('#cN').value=me.nama;$('#cE').value=me.email;$('#cA').checked=me.alert;minat=me.minat||[];chips();$('#vApp').classList.add('hide');$('#vConnect').classList.remove('hide');pane('pReg');$('#cE').readOnly=!!ses};
-async function enter(){$('#vConnect').classList.add('hide');$('#vApp').classList.remove('hide');$('#edit').classList.remove('hide');$('#out').classList.remove('hide');window.scrollTo(0,0);
- $('#fd').value='';deptBar();
- cv.nama=cv.nama||me.nama;cv.email=cv.email||me.email;$$('[data-k]').forEach(i=>i.value=cv[i.dataset.k]||'');render();
- const r=await api('me',{});if(r.ok){if(r.profile){me={...me,...r.profile};S('me',me)}if(r.cv&&Object.keys(r.cv).length){cv={...cv,...r.cv};S('cv',cv)}apps=r.apps||[];S('apps',apps);$$('[data-k]').forEach(i=>i.value=cv[i.dataset.k]||'');render()}}
-$$('nav a').forEach(a=>a.onclick=()=>{$$('nav a').forEach(x=>x.classList.toggle('on',x==a));['jobs','cv','apps'].forEach(t=>$('#t'+t).classList.toggle('hide',t!=a.dataset.t));render()});
+function logout(){ses=null;me=null;cv={};apps=[];H=[];['ses','me'].forEach(k=>{try{localStorage.removeItem(k)}catch(e){}});
+ ['vApp','vHrd','edit','out'].forEach(i=>$('#'+i).classList.add('hide'));$('#vConnect').classList.remove('hide');$('#cE').readOnly=false;pane('pIn');scrollTo(0,0)}
+$('#out').onclick=()=>{api('logout',{});logout();toast('Anda sudah keluar.')};
+async function enter(){$('#vConnect').classList.add('hide');$('#out').classList.remove('hide');scrollTo(0,0);
+ if(me.role=='hrd'){$('#edit').classList.add('hide');$('#vApp').classList.add('hide');$('#vHrd').classList.remove('hide');return hrdLoad()}
+ $('#vHrd').classList.add('hide');$('#vApp').classList.remove('hide');$('#edit').classList.remove('hide');$('#fd').value='';deptBar();render();
+ const r=await api('me',{});if(!ses)return;if(r.ok){if(r.profile){me={...me,...r.profile};S('me',me)}cv=r.cv||{};apps=r.apps||[];render()}}
+$$('nav a').forEach(a=>{a.onclick=()=>{$$('nav a').forEach(x=>x.classList.toggle('on',x==a));['jobs','cv','apps'].forEach(t=>$('#t'+t).classList.toggle('hide',t!=a.dataset.t));render()};a.onkeydown=e=>{if(e.key=='Enter'||e.key==' '){e.preventDefault();a.click()}}});
 const tab=t=>$(`nav a[data-t=${t}]`).click();
 function render(){jobList();cvView();appList();dash()}
-function stats(){$('#h1').textContent=jobs.length;$('#h2').textContent=depts().length;$('#h3').textContent=new Set(jobs.map(j=>j.lokasi)).size}
 function dash(){const n=(me?.nama||'').trim();$('#hi').textContent=n?'Halo, '+n.split(/\s+/)[0]:'Halo';$('#av').textContent=n.split(/\s+/).slice(0,2).map(x=>x[0]).join('').toUpperCase()||'?';$('#s1').textContent=jobs.length;$('#s2').textContent=apps.length}
-$$('nav a').forEach(a=>a.onkeydown=e=>{if(e.key=='Enter'||e.key==' '){e.preventDefault();a.click()}});
 function deptBar(){const d=$('#fd').value;$('#fc').innerHTML=['',...depts()].map(x=>`<button type="button" class="chip${x==d?' on':''}" data-f="${esc(x)}">${x?esc(x):'Semua'}</button>`).join('')}
 $('#fc').onclick=e=>{const b=e.target.closest('[data-f]');if(!b)return;$('#fd').value=b.dataset.f;deptBar();jobList()};
-function jobList(){const q=$('#q').value.toLowerCase(),d=$('#fd').value,m=me?.minat||[],t=txt().trim(),M={};
- if(t)jobs.forEach(j=>M[j.id]=matchJob(t,j));const rk=j=>(M[j.id]?M[j.id].total:0)+(m.includes(j.dept)?8:0);
- const l=jobs.filter(j=>(!d||j.dept==d)&&(j.judul+j.desk+j.kata+j.dept).toLowerCase().includes(q)).sort((a,b)=>rk(b)-rk(a));
+function jobList(){const q=$('#q').value.toLowerCase(),d=$('#fd').value,m=me?.minat||[];
+ const l=jobs.filter(j=>(!d||j.dept==d)&&(j.judul+j.desk+j.dept+j.kual).toLowerCase().includes(q)).sort((a,b)=>m.includes(b.dept)-m.includes(a.dept));
  $('#jc').textContent=l.length+' lowongan';
- $('#jl').innerHTML=l.map(j=>{const ap=apps.some(a=>a.jobId==j.id),mt=M[j.id];
+ $('#jl').innerHTML=l.map(j=>{const ap=apps.some(a=>a.jobId==j.id);
   return `<article class="card job"><div class="jh"><span class="ji"><svg class="i"><use href="#i-brief"/></svg></span><div><h3>${esc(j.judul)}</h3><div class="meta"><span><svg class="i"><use href="#i-bld"/></svg>${esc(j.dept)}</span><span><svg class="i"><use href="#i-pin"/></svg>${esc(j.lokasi)}</span><span><svg class="i"><use href="#i-clk"/></svg>${esc(j.tipe)}</span></div></div>${m.includes(j.dept)?'<span class="tag">Sesuai minat</span>':''}</div>
- <p>${esc(j.desk)}</p><ul class="kl">${(j.kual||'').split(';').filter(Boolean).map(x=>`<li>${esc(x)}</li>`).join('')}</ul>
- ${mt?`<div class="mm"><div class="mh"><b class="pc">Cocok ${mt.total}%</b><span>${mt.total>=75?'Sangat cocok':mt.total>=55?'Cocok':mt.total>=35?'Cukup cocok':'Perlu pengembangan'}</span></div><i><b style="width:${mt.total}%"></b></i><details class="why"><summary>Lihat rincian kecocokan</summary><ul>${mt.parts.map(x=>`<li><span>${esc(x.label)}</span><b>${x.got}/${x.max}</b><small>${esc(x.note)}</small></li>`).join('')}</ul></details></div>`:'<div class="mm">Unggah CV untuk melihat kecocokan Anda dengan posisi ini.</div>'}
- <div class="act"><button data-a="${esc(j.id)}" ${ap?'disabled':''}>${ap?'Sudah dilamar':'Lamar posisi ini'}</button><button class="g" data-c="${esc(j.id)}">Cek skor CV saya</button></div></article>`}).join('')||'<div class="empty"><svg class="i"><use href="#i-search"/></svg><p>Tidak ada lowongan yang cocok.</p><span class="hint">Ubah kata pencarian atau pilih departemen lain.</span></div>'}
-
-$('#q').oninput=$('#fd').onchange=jobList;
-$('#jl').onclick=e=>{if(e.target.dataset.a)apply(e.target.dataset.a);if(e.target.dataset.c){$('#tg').value=e.target.dataset.c;tab('cv')}};
-const blk=t=>(t||'').split('\n').filter(x=>x.trim()).map(x=>/^\s*[-•*]/.test(x)?'<li>'+esc(x.replace(/^\s*[-•*]\s*/,''))+'</li>':'<p class="sub">'+esc(x)+'</p>').join('');
-function cvText(){const c=cv,p=(h,t)=>t?h+'\n'+t:'';return [c.nama,[c.email,c.telp,c.kota].filter(Boolean).join(' | '),p('RINGKASAN',c.ring),p('PENGALAMAN KERJA',c.peng),p('PENDIDIKAN',c.pend),p('KETERAMPILAN',c.skill),p('SERTIFIKASI',c.sert)].filter(Boolean).join('\n\n')}
-const txt=()=>(cv.paste&&cv.paste.trim())||cvText();
-function score(t,j){const c=[];let s=0,w=0;const add=(ok,pts,m)=>{w+=pts;if(ok)s+=pts;c.push([ok,m])},T=t.toLowerCase(),n=t.split(/\s+/).filter(Boolean).length;
- add(/\S+@\S+\.\w+/.test(t),8,'Email tercantum');add(/(\+62|0)8\d{8,11}/.test(t.replace(/[\s-]/g,'')),7,'Nomor telepon tercantum');
- add(/ringkasan|profil|summary/i.test(t),5,'Ada ringkasan profil');add(/pengalaman|experience/i.test(t),10,'Ada bagian pengalaman kerja');
- add(/pendidikan|education/i.test(t),8,'Ada bagian pendidikan');add(/keterampilan|skill|keahlian/i.test(t),8,'Ada bagian keterampilan');
- add(n>=120&&n<=900,9,'Panjang CV wajar (120–900 kata), kini '+n);add((t.match(/\d+\s*(%|ton|unit|tahun|bulan|\+)/gi)||[]).length>=2,10,'Ada capaian terukur (angka, persen, satuan)');
- let miss=[],hit=[];if(j){const k=kws(j);k.forEach(x=>(T.includes(x.toLowerCase())?hit:miss).push(x));
-  add(k.length&&hit.length/k.length>=.6,35,`Kata kunci posisi cocok ${hit.length} dari ${k.length}`)}
- return{total:w?Math.round(s/w*100):0,c,hit,miss,pts:j&&kws(j).length?Math.round(hit.length/kws(j).length*35):0}}
-function cvView(){rec();const sel=$('#tg');if(!sel.options.length||sel.options.length!=jobs.length+1)sel.innerHTML='<option value="">Tanpa posisi tertentu</option>'+jobs.map(j=>`<option value="${esc(j.id)}">${esc(j.judul)}</option>`).join('');
- const j=jobs.find(x=>x.id==sel.value),t=txt(),r=score(t,j),c=cv,has=t.trim().length>0,tt=r.total;
- $('#sc').textContent=tt;$('#s3').textContent=has?tt:'–';$('#rf').style.strokeDashoffset=326.7*(1-tt/100);$('#gz').className='gz '+(tt>=75?'ok':tt>=50?'mid':'low');
- $('#sv').textContent=!has?'Isi data CV untuk melihat skor':tt>=75?'Sudah siap dikirim':tt>=50?'Cukup, masih bisa ditingkatkan':'Perlu banyak perbaikan';
- $('#sj').textContent=j?'Dinilai untuk posisi '+j.judul:'Penilaian umum tanpa posisi tertentu';
- $('#ck').innerHTML=[...r.c].sort((a,b)=>a[0]-b[0]).map(x=>`<li class="${x[0]?'y':'n'}"><svg class="i"><use href="#i-${x[0]?'ok':'x'}"/></svg>${esc(x[1])}</li>`).join('');
- $('#kw').innerHTML=j?kws(j).map(k=>`<span class="chip k ${r.hit.includes(k)?'hit':'miss'}">${esc(k)}</span>`).join(''):'<span class="hint">Pilih posisi untuk melihat kata kunci yang perlu muncul di CV.</span>';
- $('#cvprev').innerHTML=`<h2>${esc(c.nama||'Nama Anda')}</h2><p>${esc([c.email,c.telp,c.kota].filter(Boolean).join(' | '))}</p>`+[['Ringkasan',c.ring],['Pengalaman kerja',c.peng],['Pendidikan',c.pend],['Sertifikasi',c.sert]].map(([h,v])=>v?`<h4>${h.toUpperCase()}</h4>${blk(v)}`:'').join('')+(c.skill?`<h4>KETERAMPILAN</h4><p>${esc(c.skill)}</p>`:'')}
-
-$$('[data-k]').forEach(i=>i.oninput=()=>{cv[i.dataset.k]=i.value;S('cv',cv);cvView();syncCV()});$('#tg').onchange=cvView;
-$('#pr').onclick=()=>window.print();
-$('#cp').onclick=()=>navigator.clipboard?.writeText(txt()).then(()=>toast('Teks CV disalin.'),()=>toast('Gagal menyalin.'));
-async function apply(id){const j=jobs.find(x=>x.id==id),t=txt();
- if(apps.some(a=>a.jobId==id))return toast('Anda sudah melamar posisi ini.');
- if(t.length<200){toast('Lengkapi CV dulu sebelum melamar.');$('#tg').value=id;return tab('cv')}
- if(!confirm('Kirim lamaran untuk posisi '+j.judul+'?'))return;
- clearTimeout(syncCV._);const sv=await api('saveCV',{cv});if(sv.ok===false&&!sv.offline)return toast(sv.msg||'CV gagal disimpan.');
- const r=await api('apply',{jobId:id});if(r.ok===false&&!r.offline)return toast(r.msg||'Lamaran gagal dikirim.');
- if(r.dup)return toast('Anda sudah melamar posisi ini.');
- apps.unshift({jobId:id,posisi:j.judul,skor:r.skor??score(t,j).total,cocok:r.cocok??matchJob(t,j).total,tgl:new Date().toLocaleDateString('id-ID'),status:'Diterima'});S('apps',apps);render();
- toast(r.offline?'Lamaran tersimpan (mode lokal, email tidak dikirim).':'Lamaran terkirim. Email konfirmasi dikirim ke '+me.email+'.')}
-
-const STG=['Lamaran diterima','Diseleksi','Wawancara','Keputusan'];
-const stp=s=>{s=(s||'').toLowerCase();return /tolak|reject|tidak lanjut/.test(s)?-1:/tawar|offer|hired|lolos|keputusan|diterima kerja/.test(s)?4:/wawancara|interview/.test(s)?3:/seleksi|review|proses|screen/.test(s)?2:1};
-function appList(){$('#al').innerHTML=apps.length?apps.map(a=>{const n=stp(a.status);return `<article class="card ap"><div class="ah"><h3>${esc(a.posisi)}</h3><span class="hint">Dilamar ${esc(a.tgl)}. Status: ${esc(a.status)}.</span></div><div class="as"><b>${a.cocok!=null&&a.cocok!==''?esc(a.cocok)+'%':'–'}</b><span>Kecocokan</span><span>ATS ${esc(a.skor)}</span></div>${n<0?`<span class="st no">${esc(a.status)}</span>`:`<ol class="stp">${STG.map((x,i)=>`<li class="${i<n?'d':''}${i==n-1?' c':''}">${x}</li>`).join('')}</ol>`}</article>`}).join(''):'<div class="empty"><svg class="i"><use href="#i-send"/></svg><p>Belum ada lamaran.</p><span class="hint">Buka tab Lowongan, pilih posisi, lalu lamar.</span><button data-go="jobs" type="button">Lihat lowongan</button></div>'}
-$('#al').onclick=e=>{if(e.target.dataset.go)tab(e.target.dataset.go)};
-
-let ses=L('ses',null),pend=null,lastMail='';
-const PDFJS='https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf',MAM='https://cdnjs.cloudflare.com/ajax/libs/mammoth/1.6.0/mammoth.browser.min.js';
-const SYN={welding:['las','mengelas','welder','pengelasan'],'gambar teknik':['engineering drawing','technical drawing','gambar kerja','blueprint'],'gambar kerja':['gambar teknik','shop drawing'],k3:['hse','keselamatan kerja','ohs','keselamatan dan kesehatan'],inspeksi:['inspection','inspector'],coating:['painting','pengecatan'],ncr:['non conformance','non-conformance','ketidaksesuaian'],pengadaan:['procurement','purchasing'],supplier:['vendor','pemasok'],negosiasi:['negotiation'],excel:['spreadsheet','ms excel','microsoft excel'],'risk assessment':['penilaian risiko','hira'],hira:['risk assessment','identifikasi bahaya'],apd:['ppe','alat pelindung diri'],'investigasi insiden':['incident investigation','investigasi kecelakaan'],dimensi:['dimensional','pengukuran'],toleransi:['tolerance'],material:['bahan baku','raw material'],po:['purchase order']};
-const rx=s=>new RegExp('(^|[^a-z0-9])'+s.replace(/[.*+?^${}()|[\]\\]/g,'\\$&')+'($|[^a-z0-9])');
-const HD={ring:/^(ringkasan|profil|tentang saya|summary|profile|objective|tujuan karir)/i,peng:/^(pengalaman|riwayat pekerjaan|riwayat kerja|experience|work history|employment)/i,pend:/^(pendidikan|riwayat pendidikan|education)/i,skill:/^(keterampilan|keahlian|kompetensi|skills?)/i,sert:/^(sertifikasi|sertifikat|certifications?|pelatihan|training|lisensi)/i};
-function split(t){const o={},B={};let c=null;String(t||'').replace(/\r/g,'').split('\n').forEach(l=>{l=l.trim();if(!l)return;const w=l.replace(/^[\W_]+|[\W_]+$/g,''),h=l.length<45&&w.split(/\s+/).length<=4&&Object.keys(HD).find(k=>HD[k].test(w));if(h){c=h;B[c]=B[c]||[];return}if(c)B[c].push(l)});Object.keys(B).forEach(k=>o[k]=B[k].join('\n'));return o}
-function years(t){const T=String(t).toLowerCase(),now=new Date().getFullYear(),r=[],re=/\b((?:19|20)\d\d)\s*(?:–|-|—|s\/d|sd|sampai|hingga|to)\s*((?:19|20)\d\d|sekarang|saat ini|present|now)/g;let m,tot=0,end=-1,best=0;
- while((m=re.exec(T))){const a=+m[1],b=/\d/.test(m[2])?+m[2]:now;if(b>=a&&b-a<=45)r.push([a,b])}
- r.sort((x,y)=>x[0]-y[0]).forEach(([a,b])=>{if(a>end){tot+=b-a;end=b}else if(b>end){tot+=b-end;end=b}});
- const re2=/(\d{1,2})\s*\+?\s*(?:tahun|thn|years?)\s+(?:pengalaman|experience)|(?:pengalaman|experience)[^.\n]{0,30}?(\d{1,2})\s*\+?\s*(?:tahun|thn|years?)/g;
- while((m=re2.exec(T)))best=Math.max(best,+(m[1]||m[2]));return Math.max(tot,best)}
-function eduRank(t){const T=' '+String(t).toLowerCase()+' ';return /\b(s3|doktor|ph\.?d)\b/.test(T)?5:/\b(s2|magister)\b/.test(T)?4:/\b(s1|sarjana|bachelor|d4)\b/.test(T)?3:/\b(d3|diploma 3|diploma iii|ahli madya)\b/.test(T)?2:/\b(d1|d2|sma|smk|stm|slta)\b/.test(T)?1:0}
-function req(j){const L=String(j.kual||'').toLowerCase().split(';'),E=[[5,/\bs3\b/],[4,/\bs2\b/],[3,/\b(s1|d4)\b/],[2,/\bd3\b/],[1,/\b(sma|smk|stm)\b/]],f=[];
- L.forEach(l=>E.forEach(([r,x])=>{if(x.test(l))f.push(r)}));const y=L.map(l=>l.match(/(\d{1,2})\s*(?:\+\s*)?tahun/)).find(Boolean),C=L.filter(l=>/sertifikat|lisensi|\bsio\b|certif/.test(l));
- return{ed:f.length?Math.min(...f):0,yr:y?+y[1]:0,cert:C.length>0,must:C.some(l=>!/diutamakan|nilai plus|lebih disukai/.test(l))}}
-function matchJob(t,j){const T=' '+String(t).toLowerCase()+' ',s=split(t),R=req(j),k=String(j.kata||'').split(',').map(x=>x.trim()).filter(Boolean),
- has=w=>[w.toLowerCase(),...(SYN[w.toLowerCase()]||[])].some(v=>rx(v).test(T)),hit=k.filter(has),miss=k.filter(x=>!hit.includes(x)),
- yr=years(s.peng||t),ed=eduRank(s.pend||t),ct=/sertifikat|certif|lisensi|\bsio\b|pelatihan|training/i.test(s.sert||t),EN=['','SMA/SMK','D3','S1/D4','S2','S3'],P=[],
- add=(key,label,f,max,note)=>P.push({key,label,got:Math.round(max*f),max,note});
- add('skill','Keahlian dan kata kunci',k.length?Math.min(1,hit.length/k.length/.7):1,55,k.length?hit.length+' dari '+k.length+' kata kunci ditemukan':'Posisi ini tanpa kata kunci khusus');
- add('exp','Pengalaman kerja',R.yr?(yr?Math.min(1,yr/R.yr):.5):(yr?1:.5),20,!yr?'Belum terbaca otomatis, tim akan menilai langsung':R.yr?'Terbaca '+yr+' tahun, diminta '+R.yr+' tahun':'Terbaca '+yr+' tahun');
- add('edu','Pendidikan',R.ed?(ed?(ed>=R.ed?1:ed/R.ed*.5):.5):(ed?1:.5),15,!ed?'Belum terbaca otomatis, tim akan menilai langsung':R.ed&&ed<R.ed?'Terbaca '+EN[ed]+', diminta '+EN[R.ed]+' (tetap dinilai tim)':'Terbaca '+EN[ed]);
- add('cert','Sertifikasi',R.must?(ct?1:0):R.cert?(ct?1:.6):1,10,!R.cert?'Tidak disyaratkan':ct?'Ada sertifikasi atau pelatihan':R.must?'Posisi meminta sertifikat, belum terbaca':'Sertifikat diutamakan, belum terbaca');
- return{total:P.reduce((a,x)=>a+x.got,0),parts:P,hit,miss}}
-
-const pane=id=>['pIn','pReg','pSent','pVer'].forEach(p=>$('#'+p).classList.toggle('hide',p!=id));
-document.addEventListener('click',e=>{const a=e.target.closest('[data-sw]');if(a){e.preventDefault();pane(a.dataset.sw=='reg'?'pReg':'pIn')}});
-function sent(email,pre){lastMail=email;$('#sMsg').textContent=(pre?pre+' ':'')+'Tautan masuk dikirim ke '+email+'. Buka email Anda lalu ketuk Login. Tautan berlaku 15 menit dan hanya bisa dipakai sekali.';pane('pSent');cool()}
-function cool(){const b=$('#rs');let n=60;b.disabled=true;const t=setInterval(()=>{n--;b.textContent=n>0?'Kirim ulang ('+n+' dtk)':'Kirim ulang tautan';if(n<=0){clearInterval(t);b.disabled=false}},1000)}
-async function login(email){const r=await api('login',{email});
- if(r.offline){if(me&&me.email==email){toast('Mode lokal.');return enter()}return toast('Server belum terhubung. Coba lagi nanti.')}
- if(!r.ok)return toast(r.msg||'Gagal mengirim tautan.');
- if(!r.exists){$('#cE').value=email;pane('pReg');return toast('Email belum terdaftar. Lengkapi data untuk membuat akun.')}sent(email,'')}
-$('#lGo').onclick=async()=>{const e=$('#lE').value.trim().toLowerCase();if(!/^\S+@\S+\.\S+$/.test(e))return toast('Isi email yang valid.');$('#lGo').disabled=true;await login(e);$('#lGo').disabled=false};
-$('#lE').onkeydown=e=>{if(e.key=='Enter')$('#lGo').click()};$('#rs').onclick=()=>login(lastMail);
-function logout(){ses=null;me=null;cv={};apps=[];try{['ses','me','cv','apps'].forEach(k=>localStorage.removeItem(k))}catch(e){}
- $('#vApp').classList.add('hide');$('#edit').classList.add('hide');$('#out').classList.add('hide');$('#cE').readOnly=false;$('#vConnect').classList.remove('hide');pane('pIn');window.scrollTo(0,0)}
-$('#out').onclick=()=>{logout();toast('Anda sudah keluar.')};
-function syncCV(){if(!ses)return;clearTimeout(syncCV._);syncCV._=setTimeout(async()=>{const r=await api('saveCV',{cv});if(r.ok)$('#cs').textContent='Tersimpan otomatis.'},1500)}
-function rec(){const t=txt().trim();$('#rec').innerHTML=t?jobs.map(j=>({j,m:matchJob(t,j)})).sort((a,b)=>b.m.total-a.m.total).slice(0,3).map(({j,m})=>`<button type="button" class="rc" data-c2="${esc(j.id)}"><span>${esc(j.judul)}<small>${esc(j.dept)}</small></span><b>${m.total}%</b></button>`).join(''):'<p class="hint">Isi atau unggah CV untuk melihat lowongan yang paling cocok.</p>'}
-$('#rec').onclick=e=>{const b=e.target.closest('[data-c2]');if(b){$('#tg').value=b.dataset.c2;cvView()}};
-function parseCV(t){const s=split(t),ls=t.split('\n').map(x=>x.trim()).filter(Boolean),o={};
- o.email=(t.match(/[\w.+-]+@[\w-]+(\.[\w-]+)+/)||[''])[0];o.telp=(t.match(/(?:\+62|62|0)\s?8[\d\s-]{8,13}\d/)||[''])[0].replace(/\s+/g,' ').trim();
- o.nama=ls.slice(0,6).find(l=>l.length<50&&!/@|\d{4}/.test(l)&&l.split(/\s+/).length<=5&&!/curriculum|resume|^cv$/i.test(l)&&!Object.values(HD).some(r=>r.test(l)))||'';
- o.ring=s.ring||'';o.peng=s.peng||'';o.pend=s.pend||'';o.sert=s.sert||'';o.skill=(s.skill||'').split('\n').map(x=>x.replace(/^[•\-*▪●]\s*/,'')).join(', ');return o}
+ <p>${esc(j.desk)}</p><ul class="kl">${String(j.kual||'').split(';').filter(Boolean).map(x=>`<li>${esc(x.trim())}</li>`).join('')}</ul>
+ <div class="act"><button data-a="${esc(j.id)}" ${ap?'disabled':''}>${ap?'Sudah dilamar':'Lamar posisi ini'}</button></div></article>`}).join('')
+  ||`<div class="empty"><svg class="i"><use href="#i-search"/></svg><p>${!jobsDone?'Memuat lowongan…':jobsErr?'Lowongan belum bisa dimuat.':jobs.length?'Tidak ada lowongan yang cocok.':'Belum ada lowongan terbuka.'}</p><span class="hint">${jobsErr?'Muat ulang halaman atau coba lagi nanti.':jobs.length?'Ubah kata pencarian atau pilih departemen lain.':'Silakan cek lagi nanti.'}</span></div>`}
+$('#q').oninput=jobList;$('#jl').onclick=e=>{const b=e.target.closest('[data-a]');if(b)apply(b.dataset.a)};
+function cvView(){$('#cs').textContent=cv.file?'CV tersimpan: '+cv.file+(cv.tgl?' ('+cv.tgl+')':'')+'. Unggah file baru untuk menggantinya.':'Belum ada CV. Unggah file CV Anda.';$('#s3').textContent=cv.file?'Sudah':'Belum'}
+function appList(){$('#al').innerHTML=apps.length?apps.map(a=>{const i=ST.indexOf(a.status),no=a.status=='Tidak lanjut';
+ return `<div class="card ap"><div class="ah"><h3>${esc(a.posisi)}</h3><div class="meta"><span>Dilamar ${esc(a.tgl)}</span></div></div>${no?'<span class="st no">Tidak dilanjutkan</span>':`<ul class="stp">${ST.slice(0,4).map((s,k)=>`<li class="${k<=i?'d':''}${k==i?' c':''}">${LB[s]}</li>`).join('')}</ul>`}</div>`}).join('')
+ :'<div class="empty"><svg class="i"><use href="#i-send"/></svg><p>Belum ada lamaran.</p><span class="hint">Pilih posisi di tab Lowongan, lalu lamar.</span></div>'}
+async function apply(id){const j=jobs.find(x=>x.id==id);if(!j)return;if(apps.some(a=>a.jobId==id))return toast('Anda sudah melamar posisi ini.');
+ if(!cv.file){$('#cf').dataset.go=id;toast('Pilih file CV Anda untuk melanjutkan lamaran.');return $('#cf').click()}
+ if(!confirm('Kirim lamaran untuk posisi '+j.judul+' dengan CV '+cv.file+'?'))return;
+ const r=await api('apply',{jobId:id});if(!r.ok)return toast(r.msg||'Lamaran gagal dikirim.');if(r.dup)return toast('Anda sudah melamar posisi ini.');
+ apps.unshift({jobId:id,posisi:j.judul,tgl:new Date().toLocaleDateString('id-ID'),status:'Diterima'});render();toast('Lamaran terkirim. Email konfirmasi dikirim ke '+me.email+'.')}
 const lib=u=>new Promise((ok,no)=>{if(document.querySelector('script[src="'+u+'"]'))return ok();const e=document.createElement('script');e.src=u;e.onload=ok;e.onerror=no;document.head.appendChild(e)});
 async function pdfText(b){await lib(PDFJS+'.min.js');pdfjsLib.GlobalWorkerOptions.workerSrc=PDFJS+'.worker.min.js';const d=await pdfjsLib.getDocument({data:b}).promise;let out='';
  for(let p=1;p<=d.numPages;p++){const c=await(await d.getPage(p)).getTextContent();let y=null;c.items.forEach(i=>{const yy=Math.round(i.transform[5]);out+=(y!==null&&Math.abs(yy-y)>3?'\n':' ')+i.str;y=yy});out+='\n'}return out}
 const b64=f=>new Promise(ok=>{const r=new FileReader();r.onload=()=>ok({name:f.name,mime:f.type||'application/octet-stream',b64:r.result.split(',')[1]});r.readAsDataURL(f)});
-async function readCV(f){const ext=(f.name.split('.').pop()||'').toLowerCase(),cs=$('#cs');
+async function readCV(f,go){const ext=(f.name.split('.').pop()||'').toLowerCase(),cs=$('#cs');
  if(!['pdf','docx','txt'].includes(ext))return toast('Gunakan file PDF, DOCX, atau TXT.');if(f.size>5*1048576)return toast('Ukuran file maksimal 5 MB.');
- cs.textContent='Membaca CV…';let t='';
- try{const b=await f.arrayBuffer();if(ext=='pdf')t=await pdfText(b);else if(ext=='docx'){await lib(MAM);t=(await mammoth.extractRawText({arrayBuffer:b})).value}else t=new TextDecoder().decode(b)}
- catch(e){return cs.textContent='CV tidak bisa dibaca. Coba simpan ulang sebagai PDF atau DOCX.'}
- t=t.split('\n').map(x=>x.replace(/[ \t]+/g,' ').trim()).filter(Boolean).join('\n');
- if(t.length<150)return cs.textContent='Teks tidak terbaca. File ini mungkin hasil scan atau gambar. Unggah versi teks, atau tempel isi CV di kolom paling bawah.';
- const p=parseCV(t);Object.keys(p).forEach(k=>{if(p[k])cv[k]=p[k]});cv.paste=t;S('cv',cv);
- $$('[data-k]').forEach(i=>i.value=cv[i.dataset.k]||'');cvView();cs.textContent='CV terbaca ('+t.split(/\s+/).length+' kata). Periksa kolom di bawah dan ubah jika ada yang keliru. Skor memakai teks asli CV.';
- const r=await api('saveCV',{cv,file:await b64(f)});cs.textContent+=r.ok?' Tersimpan otomatis.':r.offline?' Mode lokal, belum tersimpan di server.':' '+(r.msg||'Gagal menyimpan.')}
-$('#cf').onchange=e=>{if(e.target.files[0])readCV(e.target.files[0]);e.target.value=''};
-const dz=$('#dz');dz.onkeydown=e=>{if(e.key=='Enter'||e.key==' '){e.preventDefault();$('#cf').click()}};
+ cs.textContent='Membaca dan menyimpan CV…';let t='';
+ try{const b=await f.arrayBuffer();if(ext=='pdf')t=await pdfText(b);else if(ext=='docx'){await lib(MAM);t=(await mammoth.extractRawText({arrayBuffer:b})).value}else t=new TextDecoder().decode(b)}catch(e){t=''}
+ t=t.split('\n').map(x=>x.replace(/[ \t]+/g,' ').trim()).filter(Boolean).join('\n');if(t.length<150)t='';
+ const r=await api('saveCV',{cv:{paste:t},file:await b64(f)});
+ if(!r.ok){cvView();return toast(r.msg||'CV gagal disimpan. Coba lagi.')}
+ cv={file:f.name,tgl:new Date().toLocaleDateString('id-ID')};cvView();if(go)return apply(go);
+ toast(t?'CV tersimpan.':'CV tersimpan. Teks tidak terbaca otomatis, tim rekrutmen akan membacanya langsung.')}
+$('#cf').onchange=e=>{const g=e.target.dataset.go;delete e.target.dataset.go;if(e.target.files[0])readCV(e.target.files[0],g);e.target.value=''};
+const dz=$('#dz');dz.addEventListener('click',e=>{if(e.target.id!='cf')delete $('#cf').dataset.go});dz.onkeydown=e=>{if(e.key=='Enter'||e.key==' '){e.preventDefault();$('#cf').click()}};
 dz.ondragover=e=>{e.preventDefault();dz.classList.add('on')};dz.ondragleave=()=>dz.classList.remove('on');dz.ondrop=e=>{e.preventDefault();dz.classList.remove('on');if(e.dataTransfer.files[0])readCV(e.dataTransfer.files[0])};
-(async()=>{chips();pane('pIn');const tk=new URLSearchParams(location.search).get('token');
+/* ---------- HRD ---------- */
+async function hrdLoad(){const r=await api('hrdList',{});if(!r.ok)return toast(r.msg||'Gagal memuat lamaran.');H=r.apps||[];HJ=r.jobs||[];
+ $('#hj').innerHTML='<option value="">Semua posisi</option>'+HJ.map(j=>`<option value="${esc(j.id)}">${esc(j.judul)}</option>`).join('');
+ $('#hs').innerHTML='<option value="">Semua status</option>'+ST.map(s=>`<option value="${s}">${LB[s]}</option>`).join('');hrdRender()}
+function hrdRender(){const q=$('#hq').value.toLowerCase(),j=$('#hj').value,s=$('#hs').value,bl=$('#hbl').checked,o=$('#ho').value,un=a=>a.cocok===''||a.cocok==null,num=a=>un(a)?101:+a.cocok;
+ const l=H.filter(a=>(!j||a.jobId==j)&&(!s||a.status==s)&&(a.id+a.nama+a.email+a.posisi).toLowerCase().includes(q)).sort((a,b)=>o=='t'?String(b.id).localeCompare(String(a.id)):num(b)-num(a));
+ $('#x1').textContent=H.length;$('#x2').textContent=H.filter(a=>a.status=='Diterima').length;$('#x3').textContent=H.filter(a=>a.status=='Wawancara').length;
+ $('#hl').innerHTML=l.map((a,i)=>{const R=String(a.rincian||'').split(' | ').map(x=>{const m=x.match(/^(.*?) (\d+\/\d+) \((.*)\)$/);return m?`<li><span>${esc(m[1])}</span><b>${m[2]}</b><small>${esc(m[3])}</small></li>`:`<li><span>${esc(x)}</span></li>`}).join('');
+  return `<article class="card" data-id="${esc(a.id)}"><div class="ap"><div class="ah"><h3>${i+1}. ${esc(a.posisi)}</h3><div class="meta"><span>ID ${esc(a.id)}</span><span>${esc(String(a.tgl).slice(0,10))}</span><span>${bl?'Identitas disembunyikan':esc(a.nama)+' · '+esc(a.email)}</span><span>${esc(LB[a.status]||a.status)}</span></div></div>
+  <div class="as">${un(a)?'<b>–</b><span>Dibaca manual</span>':`<b style="color:var(--${a.cocok>=55?'ok':'ink'})">${esc(a.cocok)}%</b><span>Kecocokan</span><span>ATS ${esc(a.ats)}</span>`}</div></div>
+  <details class="why"><summary>Rincian skor dan tindakan</summary><p class="hint">${bl?'<button class="g" data-rv type="button">Tampilkan identitas</button> ':''}<span${bl?' hidden':''}><b>${esc(a.nama)}</b> · ${esc(a.email)}</span></p><ul>${R}</ul>
+  <div class="row"><div><label>Status</label><select data-st>${ST.map(x=>`<option value="${x}"${x==a.status?' selected':''}>${LB[x]}</option>`).join('')}</select></div><div><label>Catatan HRD (internal)</label><input data-nt value="${esc(a.catatan||'')}"></div></div>
+  <div class="act"><button data-sv type="button">Simpan dan kabari pelamar</button><button class="g" data-tx type="button">Lihat teks CV</button>${a.cv?'<button class="g" data-fl type="button">Unduh file CV</button>':''}</div><pre class="pre hide"></pre></details></article>`}).join('')||'<div class="empty"><p>Tidak ada lamaran.</p></div>'}
+['hq','hj','hs','ho','hbl'].forEach(i=>$('#'+i).oninput=hrdRender);
+$('#hl').onclick=async e=>{const c=e.target.closest('article');if(!c)return;const id=c.dataset.id,a=H.find(x=>x.id==id),t=e.target;
+ if(t.closest('[data-rv]')){const b=t.closest('[data-rv]'),sp=b.nextElementSibling;sp.hidden=false;b.remove()}
+ else if(t.closest('[data-tx]')){const p=c.querySelector('pre');if(!p.classList.contains('hide'))return p.classList.add('hide');p.textContent='Memuat…';p.classList.remove('hide');const r=await api('hrdCV',{id});p.textContent=r.ok?(r.teks||'Teks CV tidak terbaca otomatis. Buka file CV.'):(r.msg||'Gagal memuat teks CV.')}
+ else if(t.closest('[data-fl]')){const b=t.closest('button');b.disabled=true;const r=await api('hrdFile',{id});b.disabled=false;if(!r.ok)return toast(r.msg||'File CV tidak bisa dibuka.');
+  const u=URL.createObjectURL(new Blob([Uint8Array.from(atob(r.b64),c=>c.charCodeAt(0))],{type:r.mime})),l=document.createElement('a');l.href=u;l.download=r.name;l.click();setTimeout(()=>URL.revokeObjectURL(u),6e4)}
+ else if(t.closest('[data-sv]')){const b=t.closest('button'),st=c.querySelector('[data-st]').value,nt=c.querySelector('[data-nt]').value;b.disabled=true;const r=await api('hrdStatus',{id,status:st,catatan:nt});b.disabled=false;
+  if(!r.ok)return toast(r.msg||'Gagal menyimpan.');const ch=a.status!=st;a.status=st;a.catatan=nt;hrdRender();toast(ch?'Status tersimpan dan pelamar dikabari lewat email.':'Catatan tersimpan.')}};
+(async()=>{chips();pane('pIn');
+ const jp=live?fetch(API_URL).then(r=>r.json()).then(d=>{if(d.err)throw 0;jobs=(d.jobs||[]).filter(j=>j&&j.id&&j.judul)}).catch(()=>{jobsErr=true}):Promise.resolve();
+ jp.then(()=>{jobsDone=true;chips();deptBar();if(me&&ses&&me.role!='hrd'&&!$('#vApp').classList.contains('hide'))render()});
+ const tk=new URLSearchParams(location.search).get('token');
  if(tk){pane('pVer');const r=await api('verify',{token:tk});history.replaceState(null,'',location.pathname);
   if(r.ok){ses=r.session;S('ses',ses);me=r.profile;S('me',me)}else{pane('pIn');toast(r.msg||'Tautan tidak berlaku atau sudah dipakai. Minta tautan baru.')}}
- if(API_URL.startsWith('http'))try{const d=await(await fetch(API_URL)).json();if(d.jobs?.length){jobs=d.jobs;chips()}}catch(e){}
- if(me&&(ses||!API_URL.startsWith('http'))){$('#cN').value=me.nama;minat=me.minat||[];enter()}})();
+ await jp;if(me&&ses){minat=me.minat||[];enter()}})();
 </script>
 </body></html>
