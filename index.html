@@ -219,8 +219,9 @@ const ST=['Diterima','Diseleksi','Wawancara','Penawaran','Tidak lanjut'],LB={Dit
 let ses=L('ses',null),me=L('me',null),cv={},apps=[],jobs=[],jobsErr=false,jobsDone=false,minat=[],lastMail='',lastHrd=false,H=[],HJ=[];
 const toast=m=>{const t=$('#toast');t.textContent=m;t.style.display='block';clearTimeout(t._);t._=setTimeout(()=>t.style.display='none',4500)};
 async function api(a,d){if(!live)return{ok:false,msg:'Alamat server (API_URL) belum diisi.'};
- try{const r=await(await fetch(API_URL,{method:'POST',body:JSON.stringify({action:a,session:ses,...d})})).json();if(r.auth===false&&ses){logout();toast('Sesi berakhir. Silakan masuk lagi.')}return r}
- catch(e){return{ok:false,msg:'Server tidak dapat dihubungi. Periksa koneksi lalu coba lagi.'}}}
+ let t='';
+ try{const res=await fetch(API_URL,{method:'POST',body:JSON.stringify({action:a,session:ses,...d})});t=await res.text();const r=JSON.parse(t);if(r.auth===false&&ses){logout();toast('Sesi berakhir. Silakan masuk lagi.')}return r}
+ catch(e){console.error('API gagal:',a,e,t.slice(0,400));return{ok:false,msg:t?'Server membalas dengan galat, bukan data. Kemungkinan ada error di Code.gs atau deployment belum diperbarui (cek Executions di Apps Script).':'Server tidak dapat dihubungi. Periksa koneksi, atau buka halaman dari hosting (bukan dari pratinjau/file lokal).'}}}
 const depts=()=>[...new Set(jobs.map(j=>j.dept).filter(Boolean))];
 function stats(){$('#h1').textContent=jobs.length;$('#h2').textContent=depts().length;$('#h3').textContent=new Set(jobs.map(j=>j.lokasi).filter(Boolean)).size}
 function chips(){stats();$('#cD').innerHTML=depts().map(d=>`<span class="chip${minat.includes(d)?' on':''}" tabindex="0" role="button" aria-pressed="${minat.includes(d)}" data-d="${esc(d)}">${esc(d)}</span>`).join('')||`<span class="hint">${jobsErr?'Daftar bidang belum bisa dimuat. Muat ulang halaman.':jobsDone?'Belum ada bidang tersedia.':'Memuat bidang…'}</span>`}
