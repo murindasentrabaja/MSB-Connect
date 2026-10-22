@@ -134,6 +134,36 @@ footer{line-height:1.9}footer a{color:var(--blue);font-weight:600;text-decoratio
 .br img{height:38px;width:auto;transition:transform .3s}.br:hover img{transform:scale(1.05)}
 .br .pt{display:inline-block;color:var(--blue);background:#E6F0FF;font-weight:700;font-size:11px;letter-spacing:1px;text-transform:uppercase;padding:6px 12px;border-radius:99px}
 @media(max-width:480px){.br img{height:30px}.br .pt{display:none}}
+
+/* ===== Login HRD dan Panel HRD ===== */
+#hhome{margin-left:auto}
+.hl{display:grid;grid-template-columns:1.05fr .95fr;gap:5vw;align-items:center;min-height:calc(100vh - 64px);padding:7vh 5vw;position:relative;isolation:isolate;overflow:hidden;color:#fff;background:repeating-linear-gradient(135deg,#0000 0 28px,#ffffff0a 28px 29px),linear-gradient(120deg,#0B2F73,#1550B4 55%,#1E7BE8)}
+.hl::after{content:"";position:absolute;z-index:-1;right:-120px;top:-140px;width:460px;height:460px;border-radius:50%;background:radial-gradient(#ffffff3a,#0000 70%);animation:fl 9s ease-in-out infinite alternate}
+.hl h1{font-size:clamp(44px,6.4vw,84px);font-weight:700;text-shadow:0 4px 24px #0A2D7A66}
+.hl .lead{color:#EAF3FF;max-width:48ch;font-size:18px;margin:16px 0 22px}
+.hl-badge{display:inline-flex;align-items:center;gap:8px;margin:0 0 18px;padding:8px 16px;border-radius:99px;background:#ffffff26;border:1px solid #ffffff70;font-weight:600;font-size:14px}
+.hl-pts{list-style:none;margin:0;padding:0;display:grid;gap:10px;max-width:46ch}.hl-pts li{display:flex;gap:10px;align-items:flex-start;color:#DCEBFF}.hl-pts .i{color:#FFC83D;margin-top:3px}
+.hl-card h2{font-size:34px}
+.hint.c{text-align:center;margin:14px 0 0}
+.pw{position:relative}.pw input{padding-right:50px}.pw .pwt{position:absolute;right:5px;top:50%;transform:translateY(-50%);padding:7px;border-radius:8px;border:0;background:transparent;color:var(--mut)}
+.pw .pwt:hover:not(:disabled){background:#EAF2FF!important;transform:translateY(-50%)!important}
+.pwr{list-style:none;margin:10px 0 0;padding:0;display:flex;gap:6px 14px;flex-wrap:wrap;font-size:13px;color:var(--mut)}
+.pwr li:before{content:"";display:inline-block;width:8px;height:8px;margin-right:6px;border-radius:50%;background:var(--line);vertical-align:1px}.pwr li.y{color:var(--ok);font-weight:600}.pwr li.y:before{background:var(--ok)}
+.sg4{grid-template-columns:repeat(4,1fr);max-width:980px}
+.bdg{display:inline-block;padding:3px 10px;border-radius:99px;font-size:12px;font-weight:700;white-space:nowrap;vertical-align:middle}
+.bdg.buka{background:#DDF1E6;color:var(--ok)}.bdg.tutup{background:#EEF0F2;color:#5A6B82}.bdg.lewat{background:#FFF1D6;color:#8A5A00}.bdg.wait{background:#E6F0FF;color:var(--blue)}
+.jm-n{font-size:13px;color:var(--mut)}.jm-n b{font:700 24px 'Barlow Condensed',sans-serif;color:var(--blue);margin-right:4px}
+.bd{color:var(--no)!important;border-color:#F2C6C1!important}.bd:hover:not(:disabled){background:#FDF0EE!important;border-color:var(--no)!important}
+.tb select{width:auto;min-width:170px;flex:none}
+.md{overflow:auto}.mc.wide{width:min(94vw,680px);max-height:92vh;overflow:auto}.mc.wide h3{margin-bottom:2px}
+.mc.wide label{margin:12px 0 5px}.mc.wide .hint{font-weight:400}
+.mc.wide .row.end{margin-top:20px;flex-wrap:wrap;justify-content:flex-end}.mc.wide .row.end>*{flex:none;min-width:140px}
+.ac{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;padding:14px 0;border-top:1px solid var(--line)}.ac:first-child{border-top:0}
+.ac small{display:block;color:var(--mut);font-size:13px}.ac>div:first-child{flex:1;min-width:200px}
+#htacc h3{margin-bottom:4px}#htacc .card+.card{margin-top:0}
+.hl-sp{height:12px}
+@media(max-width:820px){.hl{grid-template-columns:1fr;min-height:0;padding:28px 5vw 40px}.hl .lead{font-size:16px}.sg4{grid-template-columns:repeat(2,1fr)}.tb select{min-width:0;flex:1}.mc.wide{padding:20px 18px}}
+
 </style></head><body>
 <svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
 <symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></symbol>
@@ -148,10 +178,10 @@ footer{line-height:1.9}footer a{color:var(--blue);font-weight:600;text-decoratio
 <symbol id="i-dl" viewBox="0 0 24 24"><path d="M12 4v11m-5-5 5 5 5-5M5 20h14"/></symbol>
 <symbol id="i-cp" viewBox="0 0 24 24"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h8"/></symbol>
 <symbol id="i-go" viewBox="0 0 24 24"><path d="M5 12h14m-6-6 6 6-6 6"/></symbol>
-<symbol id="i-up" viewBox="0 0 24 24"><path d="M12 16V4m-5 5 5-5 5 5M5 20h14"/></symbol></defs></svg>
+<symbol id="i-up" viewBox="0 0 24 24"><path d="M12 16V4m-5 5 5-5 5 5M5 20h14"/></symbol><symbol id="i-lock" viewBox="0 0 24 24"><rect x="5" y="11" width="14" height="9" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></symbol><symbol id="i-eye" viewBox="0 0 24 24"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></symbol><symbol id="i-edit" viewBox="0 0 24 24"><path d="M4 20h4L19 9l-4-4L4 16v4z"/><path d="m13.5 6.5 4 4"/></symbol><symbol id="i-trash" viewBox="0 0 24 24"><path d="M4 7h16M10 11v6M14 11v6M6 7l1 13h10l1-13M9 7V4h6v3"/></symbol><symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></symbol><symbol id="i-user" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></symbol></defs></svg>
 
 <header><div class="br"><img src="data:image/png;base64,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" alt="Logo PT Murinda Sentra Baja"><small class="pt">Portal Karir</small></div>
-<button class="g hide" id="edit" type="button"><span class="av" id="av"></span><span class="et">Ubah profil</span></button><button class="g hide" id="out" type="button">Keluar</button></header>
+<button class="g hide" id="edit" type="button"><span class="av" id="av"></span><span class="et">Ubah profil</span></button><button class="g hide" id="hhome" type="button">Portal pelamar</button><button class="g hide" id="hout" type="button">Keluar</button><button class="g hide" id="out" type="button">Keluar</button></header>
 
 <div id="vConnect">
 <section class="hero">
@@ -163,7 +193,7 @@ footer{line-height:1.9}footer a{color:var(--blue);font-weight:600;text-decoratio
   <label for="lE">Email</label><input id="lE" type="email" autocomplete="email" placeholder="nama@email.com">
   <button id="lGo" style="width:100%;margin-top:16px">Kirim tautan masuk</button>
   <p class="hint" style="text-align:center;margin:16px 0 0">Tidak ada akun? <a href="#" data-sw="reg">Terhubung dengan kami</a></p>
-  <p class="hint" style="text-align:center;margin:6px 0 0">Staf HRD? <a href="#" data-sw="hrd">Login HRD</a></p></div>
+  <p class="hint" style="text-align:center;margin:6px 0 0">Staf HRD? <a href="#hrd">Login HRD</a></p></div>
  <div id="pReg" class="hide"><h2>Terhubung dengan kami</h2><p class="hint" style="margin:6px 0 0">Buat akun dengan nama dan email. Email sambutan dan tautan login kami kirim otomatis.</p>
   <label for="cN">Nama lengkap</label><input id="cN" autocomplete="name">
   <label for="cE">Email</label><input id="cE" type="email" autocomplete="email">
@@ -172,10 +202,6 @@ footer{line-height:1.9}footer a{color:var(--blue);font-weight:600;text-decoratio
   <label class="ck2"><input type="checkbox" id="cK"> Saya setuju data saya, termasuk CV, diproses (termasuk dengan bantuan penyaringan otomatis) untuk keperluan rekrutmen PT Murinda Sentra Baja.</label>
   <button id="cGo" style="width:100%;margin-top:8px">Hubungkan</button>
   <p class="hint" style="text-align:center;margin:16px 0 0">Sudah punya akun? <a href="#" data-sw="in">Masuk</a></p></div>
- <div id="pHrd" class="hide"><h2>Login HRD</h2><p class="hint" style="margin:6px 0 0">Khusus staf HRD. Masukkan email HRD yang terdaftar, tautan login akan dikirim ke email itu.</p>
-  <label for="hE">Email HRD</label><input id="hE" type="email" autocomplete="email" placeholder="hrd@perusahaan.com">
-  <button id="hGo" style="width:100%;margin-top:16px">Kirim tautan masuk HRD</button>
-  <p class="hint" style="text-align:center;margin:16px 0 0"><a href="#" data-sw="in">Kembali ke login pelamar</a></p></div>
  <div id="pSent" class="hide"><h2>Cek email Anda</h2><p id="sMsg" style="margin:10px 0 18px"></p>
   <div class="row"><button class="g" id="rs" type="button">Kirim ulang tautan</button><button class="g" data-sw="in" type="button">Gunakan email lain</button></div></div>
  <div id="pVer" class="hide"><h2>Memverifikasi tautan…</h2><p class="hint">Mohon tunggu sebentar.</p></div></div>
@@ -198,14 +224,93 @@ footer{line-height:1.9}footer a{color:var(--blue);font-weight:600;text-decoratio
   <section id="tapps" class="hide"><div id="al"></div></section>
  </main></div>
 
+<div id="vHrdLogin" class="hide">
+<section class="hl">
+ <div><span class="hl-badge"><svg class="i"><use href="#i-lock"/></svg>Khusus staf HRD</span>
+  <h1>Panel HRD</h1><p class="lead">Kelola lowongan, tinjau lamaran, dan perbarui status pelamar. Masuk dengan akun dan kata sandi HRD. Proses ini terpisah dari login pelamar.</p>
+  <ul class="hl-pts"><li><svg class="i"><use href="#i-ok"/></svg>Tambah, ubah, dan tutup lowongan langsung dari halaman ini</li><li><svg class="i"><use href="#i-ok"/></svg>Tinjau CV dan skor kecocokan, lalu ubah status lamaran</li><li><svg class="i"><use href="#i-ok"/></svg>Pelamar dikabari lewat email setiap status berubah</li></ul></div>
+ <div class="fc hl-card">
+  <div id="hP1"><h2>Masuk HRD</h2><p class="hint" style="margin:6px 0 0">Gunakan nama akun (atau email HRD) dan kata sandi Anda.</p>
+   <form id="hF" novalidate>
+    <label for="hA">Akun atau email</label><input id="hA" name="username" autocomplete="username" autocapitalize="none" spellcheck="false" placeholder="mis. nama.akun">
+    <label for="hW">Kata sandi</label><div class="pw"><input id="hW" name="password" type="password" autocomplete="current-password"><button type="button" class="g pwt" aria-label="Tampilkan kata sandi"><svg class="i"><use href="#i-eye"/></svg></button></div>
+    <button id="hGo" type="submit" style="width:100%;margin-top:18px">Masuk</button>
+   </form>
+   <p class="hint c"><a href="#" data-hp="hP2">Lupa kata sandi, atau belum pernah mengaturnya?</a></p>
+   <p class="hint c" style="margin-top:6px"><a href="#" data-hp="home">Kembali ke portal pelamar</a></p></div>
+  <div id="hP2" class="hide"><h2>Atur kata sandi</h2><p class="hint" style="margin:6px 0 0">Masukkan email atau nama akun HRD. Tautan untuk membuat kata sandi baru dikirim ke email HRD tersebut.</p>
+   <form id="hF2" novalidate>
+    <label for="hA2">Email atau nama akun</label><input id="hA2" autocomplete="username" autocapitalize="none" spellcheck="false">
+    <button id="hGo2" type="submit" style="width:100%;margin-top:16px">Kirim tautan</button>
+   </form>
+   <p class="hint c"><a href="#" data-hp="hP1">Kembali ke login HRD</a></p></div>
+  <div id="hP3" class="hide"><h2>Cek email Anda</h2><p id="hSm" style="margin:10px 0 18px"></p>
+   <div class="row"><button class="g" id="hrs" type="button">Kirim ulang tautan</button><button class="g" data-hp="hP1" type="button">Kembali ke login</button></div></div>
+  <div id="hP4" class="hide"><h2>Buat kata sandi</h2><p class="hint" style="margin:6px 0 0">Untuk akun HRD <b id="aEm"></b>.</p>
+   <form id="hF4" novalidate>
+    <div id="aAkW"><label for="aA">Nama akun</label><input id="aA" autocomplete="username" autocapitalize="none" spellcheck="false"><p class="hint" style="margin:4px 0 0">Dipakai untuk login. 3-30 karakter: huruf kecil, angka, titik, strip, atau garis bawah.</p></div>
+    <p id="aAkR" class="hint hide" style="margin:12px 0 0">Nama akun Anda: <b id="aAkT"></b></p>
+    <label for="aP">Kata sandi baru</label><div class="pw"><input id="aP" type="password" autocomplete="new-password"><button type="button" class="g pwt" aria-label="Tampilkan kata sandi"><svg class="i"><use href="#i-eye"/></svg></button></div>
+    <label for="aP2">Ulangi kata sandi</label><div class="pw"><input id="aP2" type="password" autocomplete="new-password"><button type="button" class="g pwt" aria-label="Tampilkan kata sandi"><svg class="i"><use href="#i-eye"/></svg></button></div>
+    <ul class="pwr" id="pwr"><li data-r="len">Minimal 8 karakter</li><li data-r="huruf">Memuat huruf</li><li data-r="angka">Memuat angka</li></ul>
+    <button id="hGo4" type="submit" style="width:100%;margin-top:16px">Simpan dan masuk</button>
+   </form></div>
+  <div id="hP5" class="hide"><h2>Memeriksa tautan…</h2><p class="hint">Mohon tunggu sebentar.</p></div>
+ </div>
+</section>
+</div>
+
 <div id="vHrd" class="hide">
- <div class="dh"><h1>Panel HRD</h1><p>Skor kecocokan hanya terlihat di halaman ini dan hanya membantu mengurutkan. Semua lamaran tetap dibaca tim HRD.</p>
-  <div class="sg"><div><b id="x1">0</b><span>Total lamaran</span></div><div><b id="x2">0</b><span>Belum diproses</span></div><div><b id="x3">0</b><span>Tahap wawancara</span></div></div></div>
- <main><div class="tb"><div class="sb"><svg class="i"><use href="#i-search"/></svg><input id="hq" placeholder="Cari nama, email, ID, atau posisi" aria-label="Cari lamaran"></div></div>
-  <div class="row hf"><select id="hj" aria-label="Posisi"></select><select id="hs" aria-label="Status"></select><select id="ho" aria-label="Urutan"><option value="">Urut: kecocokan tertinggi</option><option value="t">Urut: terbaru</option></select><label class="ck2"><input type="checkbox" id="hbl"> Sembunyikan identitas</label></div>
-  <div id="hl"></div></main></div>
+ <div class="dh"><h1>Panel HRD</h1><p id="hWel">Skor kecocokan hanya terlihat di halaman ini dan hanya membantu mengurutkan. Semua lamaran tetap dibaca tim HRD.</p>
+  <div class="sg sg4"><div><b id="x0">0</b><span>Lowongan dibuka</span></div><div><b id="x1">0</b><span>Total lamaran</span></div><div><b id="x2">0</b><span>Belum diproses</span></div><div><b id="x3">0</b><span>Tahap wawancara</span></div></div></div>
+ <nav role="tablist" id="hnav"><a data-ht="apps" class="on" tabindex="0" role="tab"><svg class="i"><use href="#i-doc"/></svg>Lamaran</a><a data-ht="jobs" tabindex="0" role="tab"><svg class="i"><use href="#i-brief"/></svg>Lowongan</a><a data-ht="acc" tabindex="0" role="tab"><svg class="i"><use href="#i-user"/></svg>Akun HRD</a></nav>
+ <main>
+  <section id="htapps">
+   <div class="tb"><div class="sb"><svg class="i"><use href="#i-search"/></svg><input id="hq" placeholder="Cari nama, email, ID, atau posisi" aria-label="Cari lamaran"></div></div>
+   <div class="row hf"><select id="hj" aria-label="Posisi"></select><select id="hs" aria-label="Status"></select><select id="ho" aria-label="Urutan"><option value="">Urut: kecocokan tertinggi</option><option value="t">Urut: terbaru</option></select><label class="ck2"><input type="checkbox" id="hbl"> Sembunyikan identitas</label><button class="g" id="hcsv" type="button"><svg class="i"><use href="#i-dl"/></svg>Ekspor CSV</button></div>
+   <div id="hl"></div>
+  </section>
+  <section id="htjobs" class="hide">
+   <div class="tb"><div class="sb"><svg class="i"><use href="#i-search"/></svg><input id="jq" placeholder="Cari judul, departemen, lokasi, atau ID lowongan" aria-label="Cari lowongan"></div>
+    <select id="jflt" aria-label="Filter status lowongan"><option value="">Semua status</option><option value="buka">Dibuka</option><option value="tutup">Ditutup</option><option value="lewat">Kedaluwarsa</option></select>
+    <button id="jadd" type="button"><svg class="i"><use href="#i-plus"/></svg>Tambah lowongan</button></div>
+   <p class="hint" style="margin:0 0 14px">Lowongan berstatus Dibuka langsung tampil di portal pelamar. Lowongan yang sudah punya lamaran tidak bisa dihapus, cukup ditutup.</p>
+   <div class="jg" id="jlist"></div>
+  </section>
+  <section id="htacc" class="hide"><div class="two">
+   <div class="side">
+    <div class="card"><h3>Akun saya</h3><p class="hint" id="accMe" style="margin:6px 0 0;line-height:1.7"></p>
+     <form id="fPw" novalidate><p style="margin:18px 0 0;font-weight:600">Ganti kata sandi</p>
+      <label for="pwO">Kata sandi saat ini</label><div class="pw"><input id="pwO" type="password" autocomplete="current-password"><button type="button" class="g pwt" aria-label="Tampilkan kata sandi"><svg class="i"><use href="#i-eye"/></svg></button></div>
+      <label for="pwN">Kata sandi baru</label><div class="pw"><input id="pwN" type="password" autocomplete="new-password"><button type="button" class="g pwt" aria-label="Tampilkan kata sandi"><svg class="i"><use href="#i-eye"/></svg></button></div>
+      <label for="pwN2">Ulangi kata sandi baru</label><div class="pw"><input id="pwN2" type="password" autocomplete="new-password"><button type="button" class="g pwt" aria-label="Tampilkan kata sandi"><svg class="i"><use href="#i-eye"/></svg></button></div>
+      <p class="hint" style="margin:8px 0 0">Minimal 8 karakter, memuat huruf dan angka. Sesi di perangkat lain akan berakhir.</p>
+      <button id="pwGo" type="submit" style="margin-top:14px">Simpan kata sandi baru</button></form></div>
+   </div>
+   <div class="side">
+    <div class="card"><h3>Daftar akun HRD</h3><p class="hint" style="margin:6px 0 8px">Semua akun aktif punya akses penuh ke Panel HRD.</p><div id="accList"></div></div>
+    <div class="card"><h3>Tambah akun HRD</h3><p class="hint" style="margin:6px 0 0">Undangan untuk membuat kata sandi dikirim ke email yang diisi.</p>
+     <form id="fAdd" novalidate>
+      <label for="adN">Nama lengkap</label><input id="adN" autocomplete="off" maxlength="100">
+      <label for="adE">Email</label><input id="adE" type="email" autocomplete="off">
+      <label for="adA">Nama akun <span class="hint">(opsional, bisa dipilih sendiri saat mengatur kata sandi)</span></label><input id="adA" autocomplete="off" autocapitalize="none" spellcheck="false" maxlength="30">
+      <button id="adGo" type="submit" style="margin-top:16px"><svg class="i"><use href="#i-plus"/></svg>Tambah dan kirim undangan</button></form></div>
+   </div>
+  </div></section>
+ </main></div>
+
 
 <footer>Data Anda hanya dipakai untuk keperluan rekrutmen PT Murinda Sentra Baja.<br><a href="https://murindasentrabaja.github.io/Company-Profile/" target="_blank" rel="noopener">Kunjungi situs kami</a></footer>
+<div id="jm" class="md hide" role="dialog" aria-modal="true" aria-labelledby="jmt"><form class="mc wide" id="jmf" novalidate>
+ <h3 id="jmt">Tambah lowongan</h3><span class="hint">Kolom bertanda * wajib diisi.</span>
+ <div class="row"><div><label for="jJ">Judul posisi *</label><input id="jJ" maxlength="120" autocomplete="off"></div><div><label for="jD">Departemen *</label><input id="jD" list="jDl" maxlength="80" autocomplete="off"><datalist id="jDl"></datalist></div></div>
+ <div class="row"><div><label for="jL">Lokasi</label><input id="jL" maxlength="80" placeholder="mis. Subang" autocomplete="off"></div><div><label for="jT">Tipe</label><select id="jT"></select></div></div>
+ <div class="row"><div><label for="jE">Deadline <span class="hint">(kosongkan bila tanpa batas)</span></label><input id="jE" type="date"></div><div><label for="jS">Status</label><select id="jS"><option value="Dibuka">Dibuka (tampil di portal)</option><option value="Ditutup">Ditutup (disembunyikan)</option></select></div></div>
+ <label for="jK">Deskripsi singkat</label><textarea id="jK" maxlength="1500" style="min-height:84px"></textarea>
+ <label for="jQ">Kualifikasi <span class="hint">(satu butir per baris)</span></label><textarea id="jQ" style="min-height:104px" placeholder="D3/S1 Teknik&#10;Pengalaman min. 2 tahun&#10;Teliti dan komunikatif"></textarea>
+ <label for="jW">Kata kunci CV <span class="hint">(pisahkan dengan koma; dipakai untuk skor kecocokan CV)</span></label><textarea id="jW" style="min-height:64px" placeholder="AutoCAD, SolidWorks, gambar kerja"></textarea>
+ <div class="row end"><button class="g" type="button" id="jmc">Batal</button><button type="submit" id="jms">Simpan lowongan</button></div>
+</form></div>
 <div id="md" class="md hide" role="dialog" aria-modal="true" aria-labelledby="mt"><div class="mc"><h3 id="mt"></h3><p id="mp"></p><div class="row"><button class="g" id="mn" type="button">Batal</button><button id="my" type="button">Ya</button></div></div></div>
 <div id="toast" role="status"></div>
 <script>
@@ -216,27 +321,26 @@ const L=(k,d)=>{try{return JSON.parse(localStorage.getItem(k))??d}catch(e){retur
 const esc=s=>String(s??'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
 const OK=e=>/^\S+@\S+\.\S+$/.test(e),live=API_URL.startsWith('http');
 const ST=['Diterima','Diseleksi','Wawancara','Penawaran','Tidak lanjut'],LB={Diterima:'Lamaran diterima',Diseleksi:'Diseleksi',Wawancara:'Wawancara',Penawaran:'Penawaran kerja','Tidak lanjut':'Tidak dilanjutkan'};
-let ses=L('ses',null),me=L('me',null),cv={},apps=[],jobs=[],jobsErr=false,jobsDone=false,minat=[],lastMail='',lastHrd=false,H=[],HJ=[];
+let ses=L('ses',null),me=L('me',null),cv={},apps=[],jobs=[],jobsErr=false,jobsDone=false,minat=[],lastMail='',H=[],HJ=[],hses=L('hses',null),hme=L('hme',null),JB=[],HU=[],HF=[],pubStale=false;
 const toast=m=>{const t=$('#toast');t.textContent=m;t.style.display='block';clearTimeout(t._);t._=setTimeout(()=>t.style.display='none',4500)};
-async function api(a,d){if(!live)return{ok:false,msg:'Alamat server (API_URL) belum diisi.'};
+async function api(a,d){if(!live)return{ok:false,msg:'Alamat server (API_URL) belum diisi.'};const hr=/^hrd/.test(a),sn=hr?hses:ses;
  let t='';
- try{const res=await fetch(API_URL,{method:'POST',body:JSON.stringify({action:a,session:ses,...d})});t=await res.text();const r=JSON.parse(t);if(r.auth===false&&ses){logout();toast('Sesi berakhir. Silakan masuk lagi.')}return r}
+ try{const res=await fetch(API_URL,{method:'POST',body:JSON.stringify({action:a,session:sn,...d})});t=await res.text();const r=JSON.parse(t);if(r.auth===false&&sn){if(hr){hLogout();toast('Sesi HRD berakhir. Silakan masuk lagi.')}else{logout();toast('Sesi berakhir. Silakan masuk lagi.')}}return r}
  catch(e){console.error('API gagal:',a,e,t.slice(0,400));return{ok:false,msg:t?'Server membalas dengan galat, bukan data. Kemungkinan ada error di Code.gs atau deployment belum diperbarui (cek Executions di Apps Script).':'Server tidak dapat dihubungi. Periksa koneksi, atau buka halaman dari hosting (bukan dari pratinjau/file lokal).'}}}
 const depts=()=>[...new Set(jobs.map(j=>j.dept).filter(Boolean))];
 function stats(){$('#h1').textContent=jobs.length;$('#h2').textContent=depts().length;$('#h3').textContent=new Set(jobs.map(j=>j.lokasi).filter(Boolean)).size}
 function chips(){stats();$('#cD').innerHTML=depts().map(d=>`<span class="chip${minat.includes(d)?' on':''}" tabindex="0" role="button" aria-pressed="${minat.includes(d)}" data-d="${esc(d)}">${esc(d)}</span>`).join('')||`<span class="hint">${jobsErr?'Daftar bidang belum bisa dimuat. Muat ulang halaman.':jobsDone?'Belum ada bidang tersedia.':'Memuat bidang…'}</span>`}
 $('#cD').onclick=e=>{const d=e.target.dataset.d;if(!d)return;minat=minat.includes(d)?minat.filter(x=>x!=d):[...minat,d];chips()};
 $('#cD').onkeydown=e=>{if(e.key=='Enter'||e.key==' '){e.preventDefault();e.target.click()}};
-const PN={reg:'pReg',in:'pIn',hrd:'pHrd'},pane=id=>['pIn','pReg','pHrd','pSent','pVer'].forEach(p=>$('#'+p).classList.toggle('hide',p!=id));
+const PN={reg:'pReg',in:'pIn'},pane=id=>['pIn','pReg','pSent','pVer'].forEach(p=>$('#'+p).classList.toggle('hide',p!=id));
 document.addEventListener('click',e=>{const a=e.target.closest('[data-sw]');if(a){e.preventDefault();pane(PN[a.dataset.sw]||'pIn')}});
-function sent(email,pre,hrd){lastMail=email;lastHrd=!!hrd;$('#sMsg').textContent=hrd?'Jika '+email+' terdaftar sebagai HRD, tautan masuk sudah dikirim ke email itu. Tautan berlaku 15 menit dan hanya bisa dipakai sekali.':(pre?pre+' ':'')+'Tautan masuk dikirim ke '+email+'. Buka email Anda lalu ketuk Login. Tautan berlaku 15 menit dan hanya bisa dipakai sekali.';pane('pSent');cool()}
+function sent(email,pre){lastMail=email;$('#sMsg').textContent=(pre?pre+' ':'')+'Tautan masuk dikirim ke '+email+'. Buka email Anda lalu ketuk Login. Tautan berlaku 15 menit dan hanya bisa dipakai sekali.';pane('pSent');cool()}
 function cool(){const b=$('#rs');let n=60;b.disabled=true;const t=setInterval(()=>{n--;b.textContent=n>0?'Kirim ulang ('+n+' dtk)':'Kirim ulang tautan';if(n<=0){clearInterval(t);b.disabled=false}},1000)}
-async function login(email,hrd){const r=await api(hrd?'loginHrd':'login',{email});
+async function login(email){const r=await api('login',{email});
  if(!r.ok)return toast(r.msg||'Gagal mengirim tautan.');
- if(!hrd&&!r.exists){$('#cE').value=email;pane('pReg');return toast('Email belum terdaftar. Lengkapi data untuk membuat akun.')}sent(email,'',hrd)}
-$('#lGo').onclick=async()=>{const e=$('#lE').value.trim().toLowerCase();if(!OK(e))return toast('Isi email yang valid.');$('#lGo').disabled=true;await login(e,false);$('#lGo').disabled=false};
-$('#hGo').onclick=async()=>{const e=$('#hE').value.trim().toLowerCase();if(!OK(e))return toast('Isi email HRD yang valid.');$('#hGo').disabled=true;await login(e,true);$('#hGo').disabled=false};
-$('#lE').onkeydown=e=>{if(e.key=='Enter')$('#lGo').click()};$('#hE').onkeydown=e=>{if(e.key=='Enter')$('#hGo').click()};$('#rs').onclick=()=>login(lastMail,lastHrd);
+ if(!r.exists){$('#cE').value=email;pane('pReg');return toast('Email belum terdaftar. Lengkapi data untuk membuat akun.')}sent(email,'')}
+$('#lGo').onclick=async()=>{const e=$('#lE').value.trim().toLowerCase();if(!OK(e))return toast('Isi email yang valid.');$('#lGo').disabled=true;await login(e);$('#lGo').disabled=false};
+$('#lE').onkeydown=e=>{if(e.key=='Enter')$('#lGo').click()};$('#rs').onclick=()=>login(lastMail);
 $('#cGo').onclick=async()=>{const nama=$('#cN').value.trim(),email=$('#cE').value.trim().toLowerCase();
  if(!nama||!OK(email))return toast('Isi nama dan email yang valid.');
  const p={nama,email,minat,alert:$('#cA').checked};
@@ -245,14 +349,13 @@ $('#cGo').onclick=async()=>{const nama=$('#cN').value.trim(),email=$('#cE').valu
  $('#cGo').disabled=true;const r=await api('register',{...p,consent:true});$('#cGo').disabled=false;
  if(!r.ok)return toast(r.msg||'Gagal terhubung.');sent(email,r.exists?'Email ini sudah terdaftar.':'Akun dibuat.')};
 $('#edit').onclick=()=>{$('#cN').value=me.nama;$('#cE').value=me.email;$('#cA').checked=me.alert;minat=me.minat||[];chips();$('#vApp').classList.add('hide');$('#vConnect').classList.remove('hide');pane('pReg');$('#cE').readOnly=!!ses};
-function logout(){ses=null;me=null;cv={};apps=[];H=[];['ses','me'].forEach(k=>{try{localStorage.removeItem(k)}catch(e){}});
- ['vApp','vHrd','edit','out'].forEach(i=>$('#'+i).classList.add('hide'));$('#vConnect').classList.remove('hide');$('#cE').readOnly=false;pane('pIn');scrollTo(0,0)}
+function logout(){ses=null;me=null;cv={};apps=[];['ses','me'].forEach(k=>{try{localStorage.removeItem(k)}catch(e){}});
+ $('#cE').readOnly=false;pane('pIn');route()}
 $('#out').onclick=()=>{api('logout',{});logout();toast('Anda sudah keluar.')};
 async function enter(){$('#vConnect').classList.add('hide');$('#out').classList.remove('hide');scrollTo(0,0);
- if(me.role=='hrd'){$('#edit').classList.add('hide');$('#vApp').classList.add('hide');$('#vHrd').classList.remove('hide');return hrdLoad()}
- $('#vHrd').classList.add('hide');$('#vApp').classList.remove('hide');$('#edit').classList.remove('hide');$('#fd').value='';deptBar();render();
+ $('#vApp').classList.remove('hide');$('#edit').classList.remove('hide');$('#fd').value='';deptBar();render();
  const r=await api('me',{});if(!ses)return;if(r.ok){if(r.profile){me={...me,...r.profile};S('me',me)}cv=r.cv||{};apps=r.apps||[];render()}}
-$$('nav a').forEach(a=>{a.onclick=()=>{$$('nav a').forEach(x=>x.classList.toggle('on',x==a));['jobs','cv','apps'].forEach(t=>$('#t'+t).classList.toggle('hide',t!=a.dataset.t));render()};a.onkeydown=e=>{if(e.key=='Enter'||e.key==' '){e.preventDefault();a.click()}}});
+$$('#vApp nav a').forEach(a=>{a.onclick=()=>{$$('#vApp nav a').forEach(x=>x.classList.toggle('on',x==a));['jobs','cv','apps'].forEach(t=>$('#t'+t).classList.toggle('hide',t!=a.dataset.t));render()};a.onkeydown=e=>{if(e.key=='Enter'||e.key==' '){e.preventDefault();a.click()}}});
 const tab=t=>$(`nav a[data-t=${t}]`).click();
 function render(){jobList();cvView();appList();dash()}
 function dash(){const n=(me?.nama||'').trim();$('#hi').textContent=n?'Halo, '+n.split(/\s+/)[0]:'Halo';$('#av').textContent=n.split(/\s+/).slice(0,2).map(x=>x[0]).join('').toUpperCase()||'?';$('#s1').textContent=jobs.length;$('#s2').textContent=apps.length}
@@ -298,7 +401,7 @@ async function hrdLoad(){const r=await api('hrdList',{});if(!r.ok)return toast(r
  $('#hs').innerHTML='<option value="">Semua status</option>'+ST.map(s=>`<option value="${s}">${LB[s]}</option>`).join('');hrdRender()}
 function hrdRender(){const q=$('#hq').value.toLowerCase(),j=$('#hj').value,s=$('#hs').value,bl=$('#hbl').checked,o=$('#ho').value,un=a=>a.cocok===''||a.cocok==null,num=a=>un(a)?101:+a.cocok;
  const l=H.filter(a=>(!j||a.jobId==j)&&(!s||a.status==s)&&(a.id+a.nama+a.email+a.posisi).toLowerCase().includes(q)).sort((a,b)=>o=='t'?String(b.id).localeCompare(String(a.id)):num(b)-num(a));
- $('#x1').textContent=H.length;$('#x2').textContent=H.filter(a=>a.status=='Diterima').length;$('#x3').textContent=H.filter(a=>a.status=='Wawancara').length;
+ HF=l;$('#x1').textContent=H.length;$('#x2').textContent=H.filter(a=>a.status=='Diterima').length;$('#x3').textContent=H.filter(a=>a.status=='Wawancara').length;
  $('#hl').innerHTML=l.map((a,i)=>{const R=String(a.rincian||'').split(' | ').map(x=>{const m=x.match(/^(.*?) (\d+\/\d+) \((.*)\)$/);return m?`<li><span>${esc(m[1])}</span><b>${m[2]}</b><small>${esc(m[3])}</small></li>`:`<li><span>${esc(x)}</span></li>`}).join('');
   return `<article class="card" data-id="${esc(a.id)}"><div class="ap"><div class="ah"><h3>${i+1}. ${esc(a.posisi)}</h3><div class="meta"><span>ID ${esc(a.id)}</span><span>${esc(String(a.tgl).slice(0,10))}</span><span>${bl?'Identitas disembunyikan':esc(a.nama)+' · '+esc(a.email)}</span><span>${esc(LB[a.status]||a.status)}</span></div></div>
   <div class="as">${un(a)?'<b>–</b><span>Dibaca manual</span>':`<b style="color:var(--${a.cocok>=55?'ok':'ink'})">${esc(a.cocok)}%</b><span>Kecocokan</span><span>ATS ${esc(a.ats)}</span>`}</div></div>
@@ -313,18 +416,126 @@ $('#hl').onclick=async e=>{const c=e.target.closest('article');if(!c)return;cons
   const u=URL.createObjectURL(new Blob([Uint8Array.from(atob(r.b64),c=>c.charCodeAt(0))],{type:r.mime})),l=document.createElement('a');l.href=u;l.download=r.name;l.click();setTimeout(()=>URL.revokeObjectURL(u),6e4)}
  else if(t.closest('[data-sv]')){const b=t.closest('button'),st=c.querySelector('[data-st]').value,nt=c.querySelector('[data-nt]').value;b.disabled=true;const r=await api('hrdStatus',{id,status:st,catatan:nt});b.disabled=false;
   if(!r.ok)return toast(r.msg||'Gagal menyimpan.');const ch=a.status!=st;a.status=st;a.catatan=nt;hrdRender();toast(ch?'Status tersimpan dan pelamar dikabari lewat email.':'Catatan tersimpan.')}};
+/* ---------- HRD: login akun + kata sandi (terpisah dari pelamar), kelola lowongan dan akun ---------- */
+const sh=(id,on)=>$('#'+id).classList.toggle('hide',!on),TPD=['Penuh waktu','Kontrak','Magang','Paruh waktu'];
+let HT='apps',hTok='',hStale=false,TP=TPD,jEdit=null,lastH='';
+const fD=s=>{const m=String(s||'').match(/^(\d{4})-(\d\d)-(\d\d)/);return m?m[3]+'/'+m[2]+'/'+m[1]:String(s||'')};
+const hpane=id=>['hP1','hP2','hP3','hP4','hP5'].forEach(p=>sh(p,p==id));
+function hSet(r){hses=r.session;hme=r.profile;S('hses',hses);S('hme',hme);route()}
+function hLogout(){hses=null;hme=null;H=[];JB=[];HU=[];['hses','hme'].forEach(k=>{try{localStorage.removeItem(k)}catch(e){}});hpane('hP1');route()}
+/* Tampilan: halaman pelamar (bawaan) atau Panel HRD (alamat #hrd) */
+function route(){const hv=location.hash=='#hrd',hin=!!(hses&&hme);
+ ['vConnect','vApp','vHrdLogin','vHrd','edit','out','hout','hhome'].forEach(i=>sh(i,false));
+ $('.br .pt').textContent=hv?'Panel HRD':'Portal Karir';document.title=hv?'Panel HRD – PT Murinda Sentra Baja':'Karir – PT Murinda Sentra Baja';
+ if(hv){sh('hhome',true);if(hin){sh('hout',true);sh('vHrd',true);hrdEnter()}else sh('vHrdLogin',true)}
+ else{if(pubStale){pubStale=false;pubLoad().then(()=>{chips();deptBar();if(me&&ses&&!$('#vApp').classList.contains('hide'))render()})}if(me&&ses&&me.role!='hrd')enter();else sh('vConnect',true)}
+ scrollTo(0,0)}
+addEventListener('hashchange',route);
+document.addEventListener('click',e=>{const a=e.target.closest('[data-hp]');if(a){e.preventDefault();const v=a.dataset.hp;if(v=='home')location.hash='';else{if(v=='hP2')$('#hA2').value=$('#hA').value;hpane(v)}}
+ const t=e.target.closest('.pwt');if(t){const i=t.parentElement.querySelector('input'),s=i.type=='password';i.type=s?'text':'password';t.setAttribute('aria-label',s?'Sembunyikan kata sandi':'Tampilkan kata sandi')}});
+$('#hhome').onclick=()=>{location.hash=''};
+$('#hout').onclick=()=>{api('hrdLogout',{});hLogout();toast('Anda sudah keluar dari Panel HRD.')};
+/* Masuk */
+$('#hF').onsubmit=async e=>{e.preventDefault();const a=$('#hA').value.trim(),w=$('#hW').value;if(!a||!w)return toast('Isi akun dan kata sandi.');
+ const b=$('#hGo');b.disabled=true;const r=await api('hrdLogin',{akun:a,sandi:w});b.disabled=false;if(!r.ok)return toast(r.msg||'Gagal masuk.');
+ $('#hW').value='';toast('Selamat datang, '+((r.profile&&r.profile.nama)||'HRD')+'.');hSet(r)};
+/* Lupa / atur kata sandi */
+function hcool(){const b=$('#hrs');let n=60;b.disabled=true;const t=setInterval(()=>{n--;b.textContent=n>0?'Kirim ulang ('+n+' dtk)':'Kirim ulang tautan';if(n<=0){clearInterval(t);b.disabled=false}},1000)}
+async function hLupa(id){const r=await api('hrdLupa',{akun:id});if(!r.ok)return toast(r.msg||'Gagal mengirim tautan.');lastH=id;
+ $('#hSm').textContent='Jika '+id+' terdaftar sebagai HRD aktif, tautan untuk mengatur kata sandi sudah dikirim ke email HRD tersebut. Tautan berlaku 30 menit dan hanya bisa dipakai sekali.';hpane('hP3');hcool()}
+$('#hF2').onsubmit=async e=>{e.preventDefault();const id=$('#hA2').value.trim().toLowerCase();if(!id)return toast('Isi email atau nama akun HRD.');const b=$('#hGo2');b.disabled=true;await hLupa(id);b.disabled=false};
+$('#hrs').onclick=()=>hLupa(lastH);
+function pwChk(v){const c={len:v.length>=8,huruf:/[A-Za-z]/.test(v),angka:/\d/.test(v)};$$('#pwr li').forEach(li=>li.classList.toggle('y',!!c[li.dataset.r]))}
+$('#aP').oninput=()=>pwChk($('#aP').value);
+async function hAtur(tk){hTok=tk;hpane('hP5');const r=await api('hrdAturInfo',{token:tk});
+ if(!r.ok){hpane('hP1');return toast(r.msg||'Tautan tidak berlaku atau sudah dipakai. Minta tautan baru.')}
+ $('#aEm').textContent=r.email;sh('aAkW',!!r.perluAkun);sh('aAkR',!r.perluAkun);$('#aA').value=r.saran||'';$('#aAkT').textContent=r.akun||'';pwChk('');hpane('hP4');$('#aP').focus()}
+$('#hF4').onsubmit=async e=>{e.preventDefault();const p=$('#aP').value;if(p!=$('#aP2').value)return toast('Kata sandi dan pengulangannya harus sama.');
+ const b=$('#hGo4');b.disabled=true;const r=await api('hrdAturSet',{token:hTok,sandi:p,akun:$('#aA').value.trim()});b.disabled=false;
+ if(!r.ok){if(/^Tautan/.test(r.msg||''))hpane('hP1');return toast(r.msg||'Gagal menyimpan kata sandi.')}
+ $('#aP').value=$('#aP2').value='';hTok='';toast('Kata sandi tersimpan. Selamat datang, '+((r.profile&&r.profile.nama)||'HRD')+'.');hSet(r)};
+/* Panel */
+async function hrdEnter(){const n=hme.nama||hme.email;
+ $('#hWel').textContent='Masuk sebagai '+n+(hme.akun?' ('+hme.akun+')':'')+'. Skor kecocokan hanya terlihat di halaman ini dan hanya membantu mengurutkan. Semua lamaran tetap dibaca tim HRD.';
+ htab(HT);await Promise.all([hrdLoad(),jbLoad(),api('hrdMe',{}).then(r=>{if(r.ok&&r.profile&&hses){hme=r.profile;S('hme',hme)}})])}
+function htab(t){HT=t;$$('#hnav a').forEach(a=>a.classList.toggle('on',a.dataset.ht==t));['apps','jobs','acc'].forEach(x=>sh('ht'+x,x==t));
+ if(t=='apps'&&hStale){hStale=false;hrdLoad()}if(t=='acc')acLoad()}
+$$('#hnav a').forEach(a=>{a.onclick=()=>htab(a.dataset.ht);a.onkeydown=e=>{if(e.key=='Enter'||e.key==' '){e.preventDefault();a.click()}}});
+/* Ekspor lamaran (sesuai filter yang tampil) ke CSV; titik koma agar terbuka benar di Excel berbahasa Indonesia */
+const csvc=v=>{v=String(v??'');if(/^[=+\-@\t\r]/.test(v))v="'"+v;return '"'+v.replace(/"/g,'""')+'"'};
+$('#hcsv').onclick=()=>{const bl=$('#hbl').checked,rows=[['ID','Tanggal','ID Lowongan','Posisi','Nama','Email','Status','Kecocokan (%)','Skor ATS','Catatan HRD']]
+ .concat(HF.map(a=>[a.id,String(a.tgl).slice(0,16),a.jobId,a.posisi,bl?'':a.nama,bl?'':a.email,LB[a.status]||a.status,a.cocok,a.ats,a.catatan]));
+ if(rows.length<2)return toast('Tidak ada lamaran untuk diekspor.');
+ const u=URL.createObjectURL(new Blob(['﻿'+rows.map(r=>r.map(csvc).join(';')).join('\r\n')],{type:'text/csv;charset=utf-8'})),l=document.createElement('a');
+ l.href=u;l.download='lamaran-'+new Date().toISOString().slice(0,10)+'.csv';l.click();setTimeout(()=>URL.revokeObjectURL(u),6e4);toast(rows.length-1+' lamaran diekspor.')};
+/* Lowongan */
+const jst=j=>String(j.status).toLowerCase()=='ditutup'?['tutup','Ditutup']:j.lewat?['lewat','Kedaluwarsa']:['buka','Dibuka'];
+async function jbLoad(){const r=await api('hrdJobs',{});if(!r.ok)return toast(r.msg||'Gagal memuat lowongan.');JB=r.jobs||[];pubStale=true;TP=r.tipe&&r.tipe.length?r.tipe:TPD;$('#x0').textContent=JB.filter(j=>j.buka).length;jbRender()}
+function jbRender(){const q=$('#jq').value.toLowerCase(),f=$('#jflt').value;
+ const l=JB.filter(j=>(!f||jst(j)[0]==f)&&(j.id+' '+j.judul+' '+j.dept+' '+j.lokasi).toLowerCase().includes(q)).slice().reverse();
+ $('#jlist').innerHTML=l.map(j=>{const[k,lb]=jst(j),ds=String(j.desk||'');
+  return `<article class="card job" style="--h:${hue(j.dept)}" data-id="${esc(j.id)}"><div class="jh"><span class="ji"><svg class="i"><use href="#i-brief"/></svg></span><div><h3>${esc(j.judul)}</h3><div class="meta"><span>${esc(j.id)}</span><span><svg class="i"><use href="#i-bld"/></svg>${esc(j.dept)}</span>${j.lokasi?`<span><svg class="i"><use href="#i-pin"/></svg>${esc(j.lokasi)}</span>`:''}${j.tipe?`<span><svg class="i"><use href="#i-clk"/></svg>${esc(j.tipe)}</span>`:''}</div></div><span class="bdg ${k}">${lb}</span></div>
+ <p class="hint">${esc(ds.length>150?ds.slice(0,150)+'…':ds)||'Belum ada deskripsi.'}</p>
+ <p class="jm-n"><b>${+j.lamaran||0}</b>lamaran · ${j.deadline?'batas '+esc(fD(j.deadline)):'tanpa batas waktu'}</p>
+ <div class="act"><button class="g" type="button" data-e><svg class="i"><use href="#i-edit"/></svg>${k=='lewat'?'Perpanjang':'Ubah'}</button>${k=='lewat'?'':`<button class="g" type="button" data-t>${k=='buka'?'Tutup':'Buka'}</button>`}${+j.lamaran?`<button class="g" type="button" data-v>Lihat lamaran</button>`:''}<button class="g bd" type="button" data-x ${+j.lamaran?'disabled title="Sudah punya lamaran, tutup saja"':''}><svg class="i"><use href="#i-trash"/></svg>Hapus</button></div></article>`}).join('')
+  ||`<div class="empty"><svg class="i"><use href="#i-brief"/></svg><p>${JB.length?'Tidak ada lowongan yang cocok.':'Belum ada lowongan.'}</p><span class="hint">${JB.length?'Ubah kata pencarian atau filter status.':'Klik Tambah lowongan untuk membuat yang pertama.'}</span></div>`}
+$('#jq').oninput=jbRender;$('#jflt').onchange=jbRender;$('#jadd').onclick=()=>openJob(null);
+$('#jlist').onclick=async e=>{const c=e.target.closest('article'),b=e.target.closest('button');if(!c||!b||b.disabled)return;const id=c.dataset.id,j=JB.find(x=>x.id==id);if(!j)return;
+ if(b.dataset.e!==undefined)return openJob(j);
+ if(b.dataset.t!==undefined){const bk=jst(j)[0]!='buka';b.disabled=true;const r=await api('hrdJobStatus',{id,status:bk?'Dibuka':'Ditutup'});b.disabled=false;if(!r.ok)return toast(r.msg||'Gagal mengubah status.');await jbLoad();return toast(bk?'Lowongan dibuka dan tampil di portal pelamar.':'Lowongan ditutup dan disembunyikan dari portal pelamar.')}
+ if(b.dataset.v!==undefined){htab('apps');$('#hj').value=id;hrdRender();return scrollTo(0,0)}
+ if(b.dataset.x!==undefined){if(!await ask('Hapus lowongan?','Lowongan "'+j.judul+'" ('+j.id+') akan dihapus permanen dari sheet Lowongan.','Ya, hapus'))return;
+  const r=await api('hrdJobHapus',{id});if(!r.ok)return toast(r.msg||'Gagal menghapus.');await jbLoad();toast('Lowongan dihapus.')}};
+function openJob(j){jEdit=j?j.id:null;$('#jmt').textContent=j?'Ubah lowongan '+j.id:'Tambah lowongan';
+ const dl=[...new Set([...JB.map(x=>x.dept),...jobs.map(x=>x.dept)].filter(Boolean))];$('#jDl').innerHTML=dl.map(d=>`<option value="${esc(d)}">`).join('');
+ const tp=[...TP];if(j&&j.tipe&&!tp.includes(j.tipe))tp.push(j.tipe);const cur=j?j.tipe:'Penuh waktu';$('#jT').innerHTML=tp.map(t=>`<option${t==cur?' selected':''}>${esc(t)}</option>`).join('');
+ $('#jJ').value=j?j.judul:'';$('#jD').value=j?j.dept:'';$('#jL').value=j?j.lokasi:'';$('#jE').value=j&&j.deadline?j.deadline:'';
+ $('#jS').value=j&&String(j.status).toLowerCase()=='ditutup'?'Ditutup':'Dibuka';$('#jK').value=j?j.desk:'';$('#jQ').value=j?String(j.kual||'').split(';').join('\n'):'';$('#jW').value=j?j.kata:'';
+ sh('jm',true);document.body.style.overflow='hidden';setTimeout(()=>$('#jJ').focus(),60)}
+function closeJob(){sh('jm',false);document.body.style.overflow=''}
+$('#jmc').onclick=closeJob;$('#jm').addEventListener('mousedown',e=>{if(e.target.id=='jm')closeJob()});
+document.addEventListener('keydown',e=>{if(e.key=='Escape'&&!$('#jm').classList.contains('hide')&&$('#md').classList.contains('hide'))closeJob()});
+$('#jmf').onsubmit=async e=>{e.preventDefault();
+ const job={judul:$('#jJ').value,dept:$('#jD').value,lokasi:$('#jL').value,tipe:$('#jT').value,deadline:$('#jE').value,status:$('#jS').value,desk:$('#jK').value,kual:$('#jQ').value,kata:$('#jW').value};
+ if(!job.judul.trim())return toast('Judul posisi wajib diisi.');if(!job.dept.trim())return toast('Departemen wajib diisi.');
+ const b=$('#jms');b.disabled=true;const r=await api('hrdJobSimpan',{id:jEdit||'',job});b.disabled=false;if(!r.ok)return toast(r.msg||'Gagal menyimpan lowongan.');
+ closeJob();hStale=true;await jbLoad();toast(jEdit?'Perubahan lowongan disimpan.':'Lowongan '+r.id+' ditambahkan'+(job.status=='Dibuka'?' dan sudah tampil di portal pelamar.':'.'))};
+/* Akun HRD */
+const wk=u=>u.aktif?(u.sandi?['buka','Aktif']:['wait','Menunggu atur kata sandi']):['tutup','Nonaktif'];
+async function acLoad(){const r=await api('hrdAkunList',{});if(!r.ok)return toast(r.msg||'Gagal memuat akun HRD.');HU=r.list||[];acRender()}
+function acRender(){const m=HU.find(u=>u.saya)||{};
+ $('#accMe').innerHTML='Nama: <b>'+esc((hme&&hme.nama)||m.nama||'')+'</b><br>Akun: <b>'+esc((hme&&hme.akun)||m.akun||'-')+'</b><br>Email: <b>'+esc((hme&&hme.email)||m.email||'')+'</b>';
+ $('#accList').innerHTML=HU.map(u=>{const[k,lb]=wk(u);return `<div class="ac" data-em="${esc(u.email)}"><div><b>${esc(u.nama||u.email)}</b> <span class="bdg ${k}">${lb}</span>${u.saya?' <span class="bdg wait">Anda</span>':''}<small>${u.akun?'Akun '+esc(u.akun)+' · ':''}${esc(u.email)}</small><small>${u.masuk?'Terakhir masuk '+esc(u.masuk):'Belum pernah masuk'}</small></div>
+  ${u.saya?'':`<div class="act" style="margin:0;padding:0">${u.aktif?'<button class="g" type="button" data-iv>Kirim tautan sandi</button>':''}<button class="g${u.aktif?' bd':''}" type="button" data-ta="${u.aktif?0:1}">${u.aktif?'Nonaktifkan':'Aktifkan'}</button></div>`}</div>`}).join('')||'<p class="hint">Belum ada akun.</p>'}
+$('#accList').onclick=async e=>{const b=e.target.closest('button'),c=e.target.closest('.ac');if(!b||!c)return;const email=c.dataset.em,u=HU.find(x=>x.email==email)||{};
+ if(b.dataset.iv!==undefined){b.disabled=true;const r=await api('hrdAkunUndang',{email});b.disabled=false;return toast(r.ok?'Tautan atur kata sandi dikirim ke '+email+'.':(r.msg||'Gagal mengirim tautan.'))}
+ if(b.dataset.ta!==undefined){const on=b.dataset.ta=='1';if(!on&&!await ask('Nonaktifkan akun?',(u.nama||email)+' tidak akan bisa masuk ke Panel HRD lagi dan sesi yang sedang aktif langsung berakhir.','Ya, nonaktifkan'))return;
+  const r=await api('hrdAkunAktif',{email,aktif:on});if(!r.ok)return toast(r.msg||'Gagal mengubah akun.');await acLoad();toast(on?'Akun diaktifkan.':'Akun dinonaktifkan.')}};
+$('#fAdd').onsubmit=async e=>{e.preventDefault();const nama=$('#adN').value.trim(),email=$('#adE').value.trim().toLowerCase(),akun=$('#adA').value.trim().toLowerCase();
+ if(!nama||!OK(email))return toast('Isi nama dan email HRD yang valid.');const b=$('#adGo');b.disabled=true;const r=await api('hrdAkunTambah',{nama,email,akun});b.disabled=false;
+ if(!r.ok)return toast(r.msg||'Gagal menambah akun.');$('#fAdd').reset();await acLoad();
+ toast(r.terkirim?'Akun dibuat. Undangan atur kata sandi dikirim ke '+email+'.':'Akun dibuat, tetapi email undangan gagal terkirim. Pakai tombol Kirim tautan sandi untuk mencoba lagi.')};
+$('#fPw').onsubmit=async e=>{e.preventDefault();const lama=$('#pwO').value,baru=$('#pwN').value;if(!lama||!baru)return toast('Isi kata sandi saat ini dan yang baru.');if(baru!=$('#pwN2').value)return toast('Kata sandi baru dan pengulangannya harus sama.');
+ const b=$('#pwGo');b.disabled=true;const r=await api('hrdSandi',{lama,baru});b.disabled=false;if(!r.ok)return toast(r.msg||'Gagal mengganti kata sandi.');$('#fPw').reset();toast('Kata sandi diganti. Sesi di perangkat lain sudah diakhiri.')};
+
 const HUES=[215,190,350,150,30,265],hue=s=>HUES[[...String(s)].reduce((a,c)=>a+c.charCodeAt(0),0)%HUES.length];
 const ask=(t,m,y)=>new Promise(ok=>{const md=$('#md'),yes=$('#my'),no=$('#mn');$('#mt').textContent=t;$('#mp').textContent=m;yes.textContent=y||'Ya';md.classList.remove('hide');
  const f=v=>{md.classList.add('hide');yes.onclick=no.onclick=md.onclick=document.onkeydown=null;ok(v)};yes.onclick=()=>f(true);no.onclick=()=>f(false);md.onclick=e=>{if(e.target==md)f(false)};document.onkeydown=e=>{if(e.key=='Escape')f(false)};yes.focus()});
 document.addEventListener('pointerdown',e=>{const b=e.target.closest('button,.chip,.drop,nav a');if(!b||b.disabled)return;const r=b.getBoundingClientRect(),s=Math.max(r.width,r.height)*2,x=document.createElement('i');x.className='rp';
  x.style.cssText='width:'+s+'px;height:'+s+'px;left:'+(e.clientX-r.left-s/2)+'px;top:'+(e.clientY-r.top-s/2)+'px';if(getComputedStyle(b).position=='static')b.style.position='relative';b.style.overflow='hidden';b.appendChild(x);setTimeout(()=>x.remove(),650)});
 const nj=j=>{if(!j)return j;const g=(...k)=>{for(const n of k){const f=Object.keys(j).find(x=>x.toLowerCase().replace(/[^a-z]/g,'')==n);if(f&&j[f]!=null&&String(j[f]).trim()!=='')return j[f]}return''};return{...j,id:g('id'),judul:g('judul'),dept:g('dept','departemen'),lokasi:g('lokasi'),tipe:g('tipe'),desk:g('desk','deskripsi'),kual:g('kual','kualifikasi','kualifikasipisah'),kata:g('kata','katakunci','katakuncipisah')}};
+const pubLoad=()=>live?fetch(API_URL).then(r=>r.json()).then(d=>{if(d.err)throw 0;jobs=(d.jobs||[]).map(nj).filter(j=>j&&j.id&&j.judul);jobsErr=false}).catch(()=>{jobsErr=true}):Promise.resolve();
+const rmk=(...k)=>k.forEach(x=>{try{localStorage.removeItem(x)}catch(e){}});
 (async()=>{chips();pane('pIn');
- const jp=live?fetch(API_URL).then(r=>r.json()).then(d=>{if(d.err)throw 0;jobs=(d.jobs||[]).map(nj).filter(j=>j&&j.id&&j.judul)}).catch(()=>{jobsErr=true}):Promise.resolve();
- jp.then(()=>{jobsDone=true;chips();deptBar();if(me&&ses&&me.role!='hrd'&&!$('#vApp').classList.contains('hide'))render()});
- const tk=new URLSearchParams(location.search).get('token');
- if(tk){pane('pVer');const r=await api('verify',{token:tk});history.replaceState(null,'',location.pathname);
+ if(me&&me.role=='hrd'){ses=null;me=null;rmk('ses','me')} /* sesi HRD lama (tautan email) tidak dipakai lagi */
+ const qs=new URLSearchParams(location.search),at=qs.get('atur'),tk=qs.get('token');
+ if(at){hses=null;hme=null;rmk('hses','hme');history.replaceState(null,'',location.pathname+'#hrd')}
+ const jp=pubLoad();
+ jp.then(()=>{jobsDone=true;chips();deptBar();if(me&&ses&&!$('#vApp').classList.contains('hide'))render()});
+ if(location.hash=='#hrd')route();
+ if(at)hAtur(at);
+ if(tk){pane('pVer');const r=await api('verify',{token:tk});history.replaceState(null,'',location.pathname+location.hash);
   if(r.ok){ses=r.session;S('ses',ses);me=r.profile;S('me',me)}else{pane('pIn');toast(r.msg||'Tautan tidak berlaku atau sudah dipakai. Minta tautan baru.')}}
- await jp;if(me&&ses){minat=me.minat||[];enter()}})();
+ await jp;if(me&&ses)minat=me.minat||[];if(location.hash!='#hrd')route()})();
 </script>
 </body></html>
